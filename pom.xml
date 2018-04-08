@@ -94,17 +94,12 @@
 				<inherited>true</inherited>
 				<configuration>
 					<suiteXmlFiles>
-					<!--<file>src/test/resources/Executionfile1.xml</file>
-						 <suiteXmlFile>Executionfile1.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile2.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile3.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile4.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile5.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile6.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile7.xml</suiteXmlFile> -->
-						<!-- <suiteXmlFile>Executionfile8.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile9.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile10.xml</suiteXmlFile> -->
+						<!--<file>src/test/resources/Executionfile1.xml</file> <suiteXmlFile>Executionfile1.xml</suiteXmlFile> 
+							<suiteXmlFile>Executionfile2.xml</suiteXmlFile> <suiteXmlFile>Executionfile3.xml</suiteXmlFile> 
+							<suiteXmlFile>Executionfile4.xml</suiteXmlFile> <suiteXmlFile>Executionfile5.xml</suiteXmlFile> 
+							<suiteXmlFile>Executionfile6.xml</suiteXmlFile> <suiteXmlFile>Executionfile7.xml</suiteXmlFile> -->
+						<!-- <suiteXmlFile>Executionfile8.xml</suiteXmlFile> <suiteXmlFile>Executionfile9.xml</suiteXmlFile> 
+							<suiteXmlFile>Executionfile10.xml</suiteXmlFile> -->
 						<suiteXmlFile>Executionfile11.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
@@ -117,6 +112,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>Cp1252</encoding>
 				</configuration>
 			</plugin>
 
