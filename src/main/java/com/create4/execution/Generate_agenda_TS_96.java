@@ -27,7 +27,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =0)
+	@Test
 	public void CRe4_187() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -36,7 +36,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =1)
+	@Test
 	public void CRe4_191_192() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -45,7 +45,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =2)
+	@Test
 	public void CRe4_193_194() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -54,7 +54,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =3)
+	@Test
 	public void CRe4_204_209() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -63,7 +63,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =4)
+	@Test
 	public void CRe4_210_211_212() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -72,7 +72,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =5)
+	@Test
 	public void CRe4_213() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -81,7 +81,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =6)
+	@Test
 	public void CRe4_214() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -90,7 +90,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =7)
+	@Test
 	public void CRe4_215() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -99,7 +99,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =8)
+	@Test
 	public void CRe4_216() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -108,7 +108,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =9)
+	@Test
 	public void CRe4_217() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -117,7 +117,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =10)
+	@Test
 	public void CRe4_218() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -126,7 +126,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =11)
+	@Test
 	public void CRe4_219() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -135,7 +135,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =12)
+	@Test
 	public void CRe4_220() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -144,7 +144,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =13)
+	@Test
 	public void CRe4_221() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -153,7 +153,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =14)
+	@Test
 	public void CRe4_222() throws Exception {
 
 		TS_96 MSGA = new TS_96();
@@ -162,7 +162,7 @@ public class Generate_agenda_TS_96 {
 
 	}
 
-	@Test(priority =15)
+	@Test
 	public void CRe4_223() throws Exception {
 
 		TS_96 MSGA = new TS_96();

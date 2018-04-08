@@ -11,6 +11,15 @@
 					<include name="CRe4_170" />
 				</methods>
 			</class>
+			
+			<class name="com.create4.execution.Reschedule_mtng_TS_98">
+				<methods>
+					<include name="CRe4_241" />
+					<include name="CRe4_242" />
+					<include name="CRe4_243_245" />
+					<include name="CRe4_244" />
+				</methods>
+			</class>
 
 			<class name="com.create4.execution.Generate_agenda_TS_96">
 				<methods>
@@ -32,6 +41,7 @@
 					<include name="CRe4_723" />
 				</methods>
 			</class>
+			
 			<class name="com.create4.execution.Upcmngmtng_in_ms_TS_97">
 				<methods>
 					<include name="CRe4_224_226" />
@@ -42,24 +52,15 @@
 				</methods>
 			</class>
 
-			<class name="com.create4.execution.Reschedule_mtng_TS_98">
-				<methods>
-					<include name="CRe4_241" />
-					<include name="CRe4_242" />
-					<include name="CRe4_243_245" />
-					<include name="CRe4_244" />
-				</methods>
-			</class>
-
 			<class name="com.create4.execution.Cmpletdmtng_inMS_TS_99">
 				<methods>
 					<include name="CRe4_247" />
 					<include name="CRe4_249" />
 					<include name="CRe4_250" />
 					<include name="CRe4_252" />
-					<include name="CRe4_253" />
-					<include name="CRe4_256" />
-					<include name="CRe4_259" />
+					<include name="CRe4_253_254" />
+					<include name="CRe4_256_257" />
+					<include name="CRe4_259_260" />
 					<include name="CRe4_262" />
 					<include name="CRe4_263" />
 					<include name="CRe4_264" />
@@ -75,7 +76,7 @@
 					<include name="CRe4_274" />
 					<include name="CRe4_275" />
 					<include name="CRe4_276" />
-					<include name="CRe4_277" />
+					<include name="CRe4_277_278" />
 				</methods>
 			</class>
 			<class name="com.create4.execution.Upcmngmtng_in_admin_TS_100">

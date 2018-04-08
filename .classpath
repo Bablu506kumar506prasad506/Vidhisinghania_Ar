@@ -32,5 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/Selenium_Dump/selenium-java-2.51.0/Extended_Reports/extentreports-java-2.41.2/extentreports-2.41.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

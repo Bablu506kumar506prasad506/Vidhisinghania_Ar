@@ -94,8 +94,8 @@
 				<inherited>true</inherited>
 				<configuration>
 					<suiteXmlFiles>
-					<file>src/test/resources/Executionfile1.xml</file>
-						<!-- <suiteXmlFile>Executionfile1.xml</suiteXmlFile>
+					<!--<file>src/test/resources/Executionfile1.xml</file>
+						 <suiteXmlFile>Executionfile1.xml</suiteXmlFile>
 						<suiteXmlFile>Executionfile2.xml</suiteXmlFile>
 						<suiteXmlFile>Executionfile3.xml</suiteXmlFile>
 						<suiteXmlFile>Executionfile4.xml</suiteXmlFile>
@@ -104,8 +104,8 @@
 						<suiteXmlFile>Executionfile7.xml</suiteXmlFile> -->
 						<!-- <suiteXmlFile>Executionfile8.xml</suiteXmlFile>
 						<suiteXmlFile>Executionfile9.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile10.xml</suiteXmlFile>
-						<suiteXmlFile>Executionfile11.xml</suiteXmlFile> -->
+						<suiteXmlFile>Executionfile10.xml</suiteXmlFile> -->
+						<suiteXmlFile>Executionfile11.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
