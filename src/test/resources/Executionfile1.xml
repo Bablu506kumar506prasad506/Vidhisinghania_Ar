@@ -196,7 +196,7 @@
 				</methods>
 			</class>
 
-			<!-- <class name="com.create4.execution.Studyteammem_add_TS_125">
+			<class name="com.create4.execution.Studyteammem_add_TS_125">
 				<methods>
 
 					<include name="CRe4_565_566_567_568_569"></include>
@@ -206,14 +206,14 @@
 					<include name="CRe4_580"></include>
 
 				</methods>
-			</class> 
+			</class>
 
 			<class name="com.create4.execution.Investigator_mail_TS_139">
 				<methods>
 					<include name="CRe4_138()"></include>
 
 				</methods>
-			</class>-->
+			</class>
 
 			<class name="com.create4.execution.Admin_invitereq_dashb_TS_113">
 				<methods>
@@ -244,7 +244,7 @@
 
 
 
-			<!-- <class name="com.create4.execution.Studyteam_prjctaccess_TS_126">
+			<class name="com.create4.execution.Studyteam_prjctaccess_TS_126">
 				<methods>
 
 					<include name="CRe4_581_82_83_84_85_87_89_90"></include>
@@ -258,7 +258,7 @@
 
 
 				</methods>
-			</class> -->
+			</class>
 
 			<class name="com.create4.execution.Institute_update_in_Admin_TS_03">
 				<methods>

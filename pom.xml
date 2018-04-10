@@ -30,7 +30,6 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.11</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -94,13 +93,17 @@
 				<inherited>true</inherited>
 				<configuration>
 					<suiteXmlFiles>
-						<!--<file>src/test/resources/Executionfile1.xml</file> <suiteXmlFile>Executionfile1.xml</suiteXmlFile> 
-							<suiteXmlFile>Executionfile2.xml</suiteXmlFile> <suiteXmlFile>Executionfile3.xml</suiteXmlFile> 
-							<suiteXmlFile>Executionfile4.xml</suiteXmlFile> <suiteXmlFile>Executionfile5.xml</suiteXmlFile> 
-							<suiteXmlFile>Executionfile6.xml</suiteXmlFile> <suiteXmlFile>Executionfile7.xml</suiteXmlFile> -->
-						<!-- <suiteXmlFile>Executionfile8.xml</suiteXmlFile> <suiteXmlFile>Executionfile9.xml</suiteXmlFile> 
-							<suiteXmlFile>Executionfile10.xml</suiteXmlFile> -->
-						<suiteXmlFile>Executionfile11.xml</suiteXmlFile>
+						<!-- <file>src/test/resources/Executionfile1.xml</file>
+						<file>src/test/resources/Executionfile2.xml</file>
+						<file>src/test/resources/Executionfile3.xml</file>
+						<file>src/test/resources/Executionfile4.xml</file>
+						<file>src/test/resources/Executionfile5.xml</file>
+						<file>src/test/resources/Executionfile6.xml</file>
+						<file>src/test/resources/Executionfile7.xml</file>
+						<file>src/test/resources/Executionfile8.xml</file>
+						<file>src/test/resources/Executionfile9.xml</file>
+						<file>src/test/resources/Executionfile10.xml</file> -->
+						<file>src/test/resources/Executionfile11.xml</file>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
