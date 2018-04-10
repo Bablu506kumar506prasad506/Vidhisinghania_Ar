@@ -216,25 +216,11 @@ public class GlobalMethods {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		// driver.findElement(By.linkText("Research approval
 		// institute")).click();
-		// driver.findElement(By.linkText(Inst_tite)).click();
+		 driver.findElement(By.linkText(MS_Institute)).click();
 		Thread.sleep(2000);
 		System.out.println(MS_Institute);
 		Thread.sleep(2000);
-		WebElement table_element = GlobalMethods.driver
-				.findElement(By.cssSelector(".bgand-border-home.scroll-css.home_scroll_area"));
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) table_element.findElements(By.tagName("ul"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.xpath("//li"));
-			for (WebElement cell : cells) {
-				System.out.println(cell.getText());
-				if (cell.getText().equalsIgnoreCase(MS_Institute)) {
-					cell.click();
-					break;
-				}
-			}
-			break;
-		}
-		Thread.sleep(2000);
+		
 		driver.findElement(By.id("register_email")).sendKeys(MS_email);
 		driver.findElement(By.id("register_password")).sendKeys(MS_Password);
 		Select dropdown = new Select(driver.findElement(By.id("register_role")));
