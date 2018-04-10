@@ -1,15 +1,9 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.sql.Driver;
-import java.util.List;
 import java.util.regex.Pattern;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

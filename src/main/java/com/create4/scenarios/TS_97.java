@@ -2,8 +2,6 @@ package com.create4.scenarios;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

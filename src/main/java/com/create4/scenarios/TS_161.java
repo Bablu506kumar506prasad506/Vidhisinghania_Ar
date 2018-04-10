@@ -18,7 +18,6 @@ import com.global.methods.Global_Project_Submissions;
 import jxl.Sheet;
 import jxl.Workbook;
 
-//Check for�other submission flow with valid/invalid data
 public class TS_161 {
 
 	public TS_161() {
@@ -27,6 +26,7 @@ public class TS_161 {
 
 	GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 	Actions action = new Actions(GlobalMethods.driver);
+
 	@FindBy(id = "add_annexure_document_type")
 	WebElement annexure_document_type;
 
@@ -495,10 +495,11 @@ public class TS_161 {
 	WebElement project_title_in_list;
 
 	// Check for Others submission form for approved projects
-	public void CRe4_2293() throws Exception {}
+	public void CRe4_2293() throws Exception {
+	}
 
-	// Check for Others form mandatory fields  
-	public void CRe4_2294() throws Exception {
+	// Check for Others form mandatory fields
+	public void CRe4_2294_T() throws Exception {
 
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
@@ -520,8 +521,8 @@ public class TS_161 {
 		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
 		newdocuments.click();
 
-		WebElement othr = GWait.Wait_GetElementByLinkText("Other");
-		othr.click();
+		WebElement premterm = GWait.Wait_GetElementByLinkText("Premature Termination");
+		premterm.click();
 
 		WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
 		save_button2.click();
@@ -529,7 +530,7 @@ public class TS_161 {
 		GlobalMethods.alertaccept();
 		System.out.println(docvalue1.size() - 1);
 
-		for (int i = 1; i <= docvalue1.size() - 1; ) {
+		for (int i = 1; i <= docvalue1.size() - 1;) {
 			Thread.sleep(3000);
 			GWait.LoadGif();
 			docdrop1.click();
@@ -576,7 +577,7 @@ public class TS_161 {
 	}
 
 	// Check for save Others as draft
-	public void CRe4_2303_2304() throws Exception {
+	public void CRe4_2303_2304_T() throws Exception {
 
 		GlobalMethods.PI_Login();
 
@@ -598,8 +599,8 @@ public class TS_161 {
 		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
 		newdocuments.click();
 
-		WebElement othr = GWait.Wait_GetElementByLinkText("Other");
-		othr.click();
+		WebElement premterm = GWait.Wait_GetElementByLinkText("Premature Termination");
+		premterm.click();
 
 		System.out.println(docvalue1.size() - 1);
 
@@ -632,7 +633,7 @@ public class TS_161 {
 			}
 			break;
 		}
-		
+
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
 		Thread.sleep(3000);
 		WebElement next_button1 = GWait.Wait_GetElementById("nextid");
@@ -665,7 +666,7 @@ public class TS_161 {
 	}
 
 	// Check for Others in admin login other_dashboard.click();
-	public void CRe4_2305() throws Exception {
+	public void CRe4_2305_T() throws Exception {
 
 		try {
 			FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
@@ -676,8 +677,8 @@ public class TS_161 {
 
 			GlobalMethods.Admin_Login();
 
-			WebElement other_dashboard = GWait.Wait_GetElementByXpath("//li[9]/a/span");
-			other_dashboard.click();
+			WebElement Terminated_dashboard = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[5]/a/span");
+			Terminated_dashboard.click();
 
 			String submission_type_list_1 = submission_type_in_list.getText();
 			submission_name_in_adminlist.equalsIgnoreCase(submission_type_list_1);
@@ -690,11 +691,11 @@ public class TS_161 {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	Global_Project_Submissions gps = new Global_Project_Submissions();
+
 	// Check for MS assign reviewers if Others is of expedited review type
-	public void CRe4_2309() throws Exception {
+	public void CRe4_2309_T() throws Exception {
 
 		// Create initial project and give MS decision as 'Letter of permission'
 
@@ -857,8 +858,8 @@ public class TS_161 {
 
 		newdocuments.click();
 
-		WebElement othr = GWait.Wait_GetElementByLinkText("Other");
-		othr.click();
+		WebElement premterm = GWait.Wait_GetElementByLinkText("Premature Termination");
+		premterm.click();
 
 		System.out.println(docvalue1.size() - 1);
 
@@ -916,10 +917,9 @@ public class TS_161 {
 
 		GlobalMethods.Admin_Login();
 
-		WebElement OtherLink = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[9]/a/span[1]");
+		WebElement Terminated_dashboard = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[5]/a/span");
+		Terminated_dashboard.click();
 
-		OtherLink.click();
-		
 		Thread.sleep(2000);
 
 		WebElement overview = GWait.Wait_GetElementByCSS("span.fa.fa-eye");
@@ -929,7 +929,7 @@ public class TS_161 {
 
 		WebElement forward_button = GWait.Wait_GetElementById("forward_modal_btn");
 		forward_button.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		WebElement ethic_frwd = GWait.Wait_GetElementById("forward_btn");
 		ethic_frwd.click();
 		GlobalMethods.Screenshot("Test1.0");
@@ -942,9 +942,8 @@ public class TS_161 {
 
 		GlobalMethods.MS_Login();
 
-		WebElement OtherLink1 = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[9]/a/span[1]");
-
-		OtherLink1.click();
+		WebElement Terminated_dashboard1 = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[5]/a/span");
+		Terminated_dashboard1.click();
 		Thread.sleep(2000);
 
 		WebElement Projectoverview111 = GWait.Wait_GetElementByXpath("//td[10]/a/span");
@@ -967,7 +966,7 @@ public class TS_161 {
 	}
 
 	// Check for MS assign reviewers if Others is of full board review type
-	public void CRe4_2310_2336() throws Exception {
+	public void CRe4_2310_2336_T() throws Exception {
 
 		// Create initial project and give MS decision as 'Letter of permission'
 		// Login as PI
@@ -998,8 +997,8 @@ public class TS_161 {
 
 		newdocuments.click();
 
-		WebElement othr = GWait.Wait_GetElementByLinkText("Other");
-		othr.click();
+		WebElement premterm = GWait.Wait_GetElementByLinkText("Premature Termination");
+		premterm.click();
 
 		System.out.println(docvalue1.size() - 1);
 
@@ -1033,7 +1032,7 @@ public class TS_161 {
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		WebElement next_button1 = GWait.Wait_GetElementById("nextid");
 		next_button1.click();
 		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
@@ -1054,8 +1053,8 @@ public class TS_161 {
 		// Login as admin
 		GlobalMethods.Admin_Login();
 
-		WebElement OtherLink1 = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[9]/a/span[1]");
-		OtherLink1.click();
+		WebElement Terminated_dashboard = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[5]/a/span");
+		Terminated_dashboard.click();
 		Thread.sleep(2000);
 		WebElement overview = GWait.Wait_GetElementByCSS("span.fa.fa-eye");
 		overview.click();
@@ -1066,11 +1065,14 @@ public class TS_161 {
 		Select select_1 = new Select(ethic_selection);
 		select_1.selectByVisibleText(ethic_com);
 		Thread.sleep(2000);
-		/*WebElement ethic_comments = GWait.Wait_GetElementByClassName("richText");
-		ethic_comments.sendKeys(ethic_comnts);*/
+		/*
+		 * WebElement ethic_comments =
+		 * GWait.Wait_GetElementByClassName("richText");
+		 * ethic_comments.sendKeys(ethic_comnts);
+		 */
 		WebElement ethic_frwd = GWait.Wait_GetElementById("forward_btn");
 		ethic_frwd.click();
-		
+
 		Thread.sleep(10000);
 		WebElement proj = GWait.Wait_GetElementByXpath("html/body/div[3]/div/div[2]/ul/li[2]/a");
 		proj.click();
@@ -1083,24 +1085,24 @@ public class TS_161 {
 		// MS assign reviewers & giving decision
 
 		GlobalMethods.MS_Login();
-		WebElement OtherLink11 = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[9]/a/span[1]");
-		OtherLink11.click();
+		WebElement Terminated_dashboard1 = GWait.Wait_GetElementByXpath("//div[2]/div[2]/div/div/ul/li[5]/a/span");
+		Terminated_dashboard1.click();
 		Thread.sleep(2000);
 		WebElement Projectoverview = GWait.Wait_GetElementByXpath("//td[10]/a/span");
 		Projectoverview.click();
-		
+
 		WebElement asignreviewers = GWait.Wait_GetElementByLinkText("Assign Reviewer(s)");
 		asignreviewers.click();
-		
+
 		Select select_1b = new Select(review_type_select);
 		select_1b.selectByVisibleText(Review_Type_expedited);
-		
+
 		WebElement forward_chairman_button = GWait.Wait_GetElementById("forward_chairman");
 		forward_chairman_button.click();
-		
+
 		Select select_1b1 = new Select(review_type_select);
 		select_1b1.selectByVisibleText(Review_Type);
-		
+
 		Select select2a = new Select(primaryreview_one);
 		select2a.selectByVisibleText(Rev_one);
 		WebElement assign_button = GWait.Wait_GetElementById("assign");
@@ -1112,7 +1114,7 @@ public class TS_161 {
 	}
 
 	// Check for document type field in Others form
-	public void CRe4_2295_2296_2297() throws Exception {
+	public void CRe4_2295_2296_2297_T() throws Exception {
 
 		GlobalMethods.Admin_Login();
 
@@ -1124,10 +1126,9 @@ public class TS_161 {
 
 		String Project_Type = r1.getCell(3, 13).getContents();
 		String Review_Type = r1.getCell(4, 13).getContents();
-		
+
 		String document_upload = r1.getCell(5, 13).getContents();
 		String sub_amend = r1.getCell(6, 13).getContents();
-		
 
 		WebElement manageiec = GWait.Wait_GetElementByLinkText("Manage IEC");
 		manageiec.click();
@@ -1222,8 +1223,8 @@ public class TS_161 {
 		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
 		newdocuments.click();
 
-		WebElement othr = GWait.Wait_GetElementByLinkText("Other");
-		othr.click();
+		WebElement premterm = GWait.Wait_GetElementByLinkText("Premature Termination");
+		premterm.click();
 
 		WebElement docdrop1 = GWait
 				.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
@@ -1255,7 +1256,7 @@ public class TS_161 {
 
 	}
 
-	public void CRe4_2333_2334_2335() throws Exception {
+	public void CRe4_2333_2334_2335_T() throws Exception {
 
 		// Create initial project and give MS decision as 'Letter of permission'
 		// Login as PI

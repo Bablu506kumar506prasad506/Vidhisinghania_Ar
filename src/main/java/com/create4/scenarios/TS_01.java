@@ -2,13 +2,9 @@ package com.create4.scenarios;
 
 import java.io.FileInputStream;
 
-import java.io.FileNotFoundException;
 import java.util.regex.Pattern;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,8 +12,6 @@ import org.testng.Assert;
 
 import com.global.methods.GlobalMethods;
 import com.global.methods.GlobalWait;
-import com.sun.jna.platform.win32.WinUser.LASTINPUTINFO;
-
 import jxl.Sheet;
 import jxl.Workbook;
 

@@ -3,17 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.create4.execution.Generate_agenda_TS_96">
+      <class name="com.create4.execution.Amend_sub_flow_TS_157">
         <methods>
-          <include name="tearDown"/>
-          <include name="CRe4_210_211_212"/>
           <include name="beforeMethod"/>
-          <include name="CRe4_219"/>
-          <include name="CRe4_193_194"/>
-          <include name="CRe4_215"/>
-          <include name="CRe4_223"/>
+          <include name="CRe4_2117_2118"/>
         </methods>
-      </class> <!-- com.create4.execution.Generate_agenda_TS_96 -->
+      </class> <!-- com.create4.execution.Amend_sub_flow_TS_157 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,9 +1,5 @@
 package com.create4.scenarios;
 
-import java.awt.Robot;
-
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 

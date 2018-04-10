@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -18,7 +17,7 @@ public class GlobalWait {
 	
 	public static WebDriver driver;
 	public GlobalWait(WebDriver driver) {
-		this.driver = driver;
+		GlobalWait.driver = driver;
 		//PageFactory.initElements(driver, this);
 	}
 
@@ -35,6 +34,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(120, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementXpath = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test"+elementXPath1);
 				return driver.findElement(By.xpath(elementXPath1));
@@ -50,6 +50,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(time, TimeUnit.SECONDS).pollingEvery(10, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementIDs = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementID);
 				return driver.findElement(By.id(elementID));
@@ -64,6 +65,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementNames = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementName);
 				return driver.findElement(By.name(elementName));
@@ -79,6 +81,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementCN = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementClassName);
 				return driver.findElement(By.className(elementClassName));
@@ -93,6 +96,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(120, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementcss = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementCSS);
 				return driver.findElement(By.cssSelector(elementCSS));
@@ -107,6 +111,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(60, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementLT = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementLinkText);
 				return driver.findElement(By.linkText(elementLinkText));
@@ -121,6 +126,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementTN = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementTagName);
 				return driver.findElement(By.tagName(elementTagName));
@@ -135,6 +141,7 @@ public class GlobalWait {
 		Wait wait = new FluentWait(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		WebElement elementPLT = (WebElement) wait.until(new Function() {
+			@Override
 			public Object apply(Object arg0) {
 				//System.out.println("test" + elementPartialLT);
 				return driver.findElement(By.partialLinkText(elementPartialLT));

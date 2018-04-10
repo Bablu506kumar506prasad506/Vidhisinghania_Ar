@@ -50,7 +50,28 @@
 					<include name="CRe4_2276" />
 				</methods>
 			</class>
-			<class name="com.create4.execution.Othrsub_flow_TS_161">
+			<class name="com.create4.execution.Terminationsub_flow_TS_161">
+				<methods>
+					<include name="CRe4_2294_T" />
+					<include name="CRe4_2295_2296_2297_T" />
+					<include name="CRe4_2303_2304_T" />
+					<include name="CRe4_2305_T" />
+					<include name="CRe4_2309_T" />
+					<include name="CRe4_2310_2336_T" />
+				</methods>
+			</class> 
+			
+			<class name="com.create4.execution.Saesub_flow_TS_189">
+				<methods>
+					<include name="CRe4_2294_S" />
+					<include name="CRe4_2295_2296_2297_S" />
+					<include name="CRe4_2303_2304_S" />
+					<include name="CRe4_2305_S" />
+					<include name="CRe4_2309_S" />
+					<include name="CRe4_2310_2336_S" />
+				</methods>
+			</class> 
+			<class name="com.create4.execution.Othrsub_flow_TS_190">
 				<methods>
 					<include name="CRe4_2294" />
 					<include name="CRe4_2295_2296_2297" />

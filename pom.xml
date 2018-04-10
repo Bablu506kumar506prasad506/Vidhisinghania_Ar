@@ -92,6 +92,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>Executionfile11.xml</suiteXmlFile>
+						<file>src/test/resources/Executionfile4.xml</file>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

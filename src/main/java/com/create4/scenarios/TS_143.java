@@ -2,8 +2,6 @@ package com.create4.scenarios;
 
 import java.io.FileInputStream;
 
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;

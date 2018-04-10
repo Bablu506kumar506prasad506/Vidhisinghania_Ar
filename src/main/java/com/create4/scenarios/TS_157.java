@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -913,7 +912,7 @@ public class TS_157 {
 		ethic_comments.sendKeys(ethic_comnts);*/
 
 		String MSname = ethic_ms_name.getAttribute("Value");
-
+		Thread.sleep(5000);
 		ethic_frwd.click();
 
 		WebElement ethic_frwd_acknowledge = GWait.Wait_GetElementByXpath("//div[@id='flash_message_admin']/p");

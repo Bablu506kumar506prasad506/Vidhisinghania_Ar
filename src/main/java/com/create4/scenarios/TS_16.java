@@ -13,7 +13,6 @@ import org.testng.Assert;
 
 import com.global.methods.GlobalMethods;
 import com.global.methods.GlobalWait;
-import com.sun.jna.platform.win32.WinGDI;
 import jxl.Sheet;
 import jxl.Workbook;
 

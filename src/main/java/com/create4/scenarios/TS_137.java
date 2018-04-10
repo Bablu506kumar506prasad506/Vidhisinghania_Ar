@@ -1,7 +1,6 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

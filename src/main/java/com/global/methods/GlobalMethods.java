@@ -5,10 +5,8 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -35,7 +33,6 @@ import org.testng.Assert;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import jxl.write.WritableWorkbook;
 
 public class GlobalMethods {
 
@@ -989,22 +986,23 @@ public class GlobalMethods {
 	public static void meetingMail(String url, String Email, String Password) throws InterruptedException {
 
 		driver.get(url);
-		driver.findElement(By.id("identifierId")).clear();
 		driver.findElement(By.id("identifierId")).sendKeys(Email);
-		driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
+		driver.findElement(By.xpath("html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div/div/div[1]/div/content/span"))
+				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.name("password")).clear();
 		driver.findElement(By.name("password")).sendKeys(Password);
-		driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
-		Thread.sleep(60000);
+		driver.findElement(By.xpath("html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div/div/div[1]/div/content/span"))
+				.click();
+		Thread.sleep(10000);
 		driver.findElement(By.cssSelector(".asf.T-I-J3.J-J5-Ji")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector(".asf.T-I-J3.J-J5-Ji")).click();
 		System.out.println("Refresh button Clicked");
 		Thread.sleep(20000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath("//span/b[text()='e-EC - Invitation for Upcoming IEC Meeting']")).click();
 		Thread.sleep(6000);
-		Thread.sleep(2000);
 		/*
 		 * driver.findElement(By.cssSelector("span.gb_bb.gbii")).click();
 		 * Thread.sleep(2000); driver.findElement(By.id("gb_71")).click();
@@ -1016,13 +1014,14 @@ public class GlobalMethods {
 	public static void remeetingMail(String url, String Email, String Password) throws InterruptedException {
 
 		driver.get(url);
-		driver.findElement(By.id("identifierId")).clear();
 		driver.findElement(By.id("identifierId")).sendKeys(Email);
-		driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
+		driver.findElement(By.xpath("html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div/div/div[1]/div/content/span"))
+				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.name("password")).clear();
 		driver.findElement(By.name("password")).sendKeys(Password);
-		driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
+		driver.findElement(By.xpath("html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div/div/div[1]/div/content/span"))
+				.click();
 		Thread.sleep(60000);
 		driver.findElement(By.cssSelector(".asf.T-I-J3.J-J5-Ji")).click();
 		Thread.sleep(3000);
@@ -1033,18 +1032,6 @@ public class GlobalMethods {
 				.click();
 		Thread.sleep(6000);
 		Thread.sleep(2000);
-		/*
-		 * driver.findElement(By.cssSelector("span.gb_bb.gbii")).click();
-		 * Thread.sleep(2000); driver.findElement(By.id("gb_71")).click();
-		 * Thread.sleep(2000);
-		 * 
-		 * for (String winHandle : driver.getWindowHandles()) {
-		 * driver.switchTo().window(winHandle); }
-		 * 
-		 * 
-		 * String winHandleBefore1 = "";
-		 * driver.switchTo().window(winHandleBefore1);
-		 */
 
 	}
 
