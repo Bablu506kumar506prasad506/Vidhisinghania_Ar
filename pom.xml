@@ -102,8 +102,9 @@
 						<file>src/test/resources/Executionfile7.xml</file>
 						<file>src/test/resources/Executionfile8.xml</file>
 						<file>src/test/resources/Executionfile9.xml</file>
-						<file>src/test/resources/Executionfile10.xml</file> -->
-						<file>src/test/resources/Executionfile11.xml</file>
+						<file>src/test/resources/Executionfile10.xml</file> 
+						<file>src/test/resources/Executionfile11.xml</file>-->
+						<suiteXmlFile>Executionfile11.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
