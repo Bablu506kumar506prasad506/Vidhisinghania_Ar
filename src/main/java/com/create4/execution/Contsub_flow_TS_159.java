@@ -15,18 +15,16 @@ import jxl.Workbook;
 public class Contsub_flow_TS_159 {
 	@BeforeMethod
 	public void beforeMethod() throws Exception, Exception {
-		
+
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
 		Sheet r1 = wb.getSheet("Login");
 
-		String URL = r1.getCell(1,0).getContents();
-		String FirefoxBrowser = r1.getCell(1,1).getContents();
+		String URL = r1.getCell(1, 0).getContents();
+		String FirefoxBrowser = r1.getCell(1, 1).getContents();
 		GlobalMethods.LaunchBrowser(FirefoxBrowser, URL);
 
 	}
-
-
 
 	@Test
 	public void CRe4_2202() throws Exception {
@@ -92,11 +90,9 @@ public class Contsub_flow_TS_159 {
 
 	}
 
-	
 	@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
-		
 
 	}
 

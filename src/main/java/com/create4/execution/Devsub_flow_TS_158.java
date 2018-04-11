@@ -18,13 +18,13 @@ public class Devsub_flow_TS_158 {
 		Workbook wb = Workbook.getWorkbook(fi);
 		Sheet r1 = wb.getSheet("Login");
 
-		String URL = r1.getCell(1,0).getContents();
-		String FirefoxBrowser = r1.getCell(1,1).getContents();
+		String URL = r1.getCell(1, 0).getContents();
+		String FirefoxBrowser = r1.getCell(1, 1).getContents();
 		GlobalMethods.LaunchBrowser(FirefoxBrowser, URL);
 
 	}
 
-	@Test (priority = 0)
+	@Test(priority = 0)
 	public void CRe4_2154() throws Exception {
 
 		TS_158 i1 = new TS_158();
@@ -32,9 +32,7 @@ public class Devsub_flow_TS_158 {
 
 	}
 
-	
-
-	@Test (priority = 1)
+	@Test(priority = 1)
 	public void CRe4_2165() throws Exception {
 
 		TS_158 i1 = new TS_158();
@@ -42,7 +40,7 @@ public class Devsub_flow_TS_158 {
 
 	}
 
-	@Test 
+	@Test
 	public void CRe4_2166_2167_2168() throws Exception {
 
 		TS_158 i1 = new TS_158();
@@ -57,7 +55,7 @@ public class Devsub_flow_TS_158 {
 		i1.CRe4_2169();
 
 	}
-	
+
 	@Test
 	public void CRe4_2155_2156_2157() throws Exception {
 
@@ -82,12 +80,9 @@ public class Devsub_flow_TS_158 {
 
 	}
 
-	
-
 	@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
-	
 
 	}
 

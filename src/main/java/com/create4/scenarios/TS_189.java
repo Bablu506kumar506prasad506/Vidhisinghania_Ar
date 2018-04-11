@@ -688,7 +688,7 @@ public class TS_189 {
 		Sheet r1 = wb.getSheet("Project Submissions_Validations");
 
 		gps.PI_SubmitProject_IECAdmin();
-		Thread.sleep(3500);
+		Thread.sleep(5000);
 		WebElement LogOut = GWait.Wait_GetElementByXpath("//span/a");
 		LogOut.click();
 		WebElement logo = GWait.Wait_GetElementByCSS("img");
@@ -757,8 +757,8 @@ public class TS_189 {
 
 		GlobalMethods.MS_Login();
 
-		WebElement Sae_dashboard = GWait.Wait_GetElementByXpath("//li[8]/a/span");
-		Sae_dashboard.click();
+		WebElement Expe_dashboard = GWait.Wait_GetElementByXpath("//div/div/ul[1]/li[2]/a/span[1]");
+		Expe_dashboard.click();
 
 		String Rev_one = r1.getCell(13, 9).getContents();
 
@@ -778,7 +778,7 @@ public class TS_189 {
 		Select select1 = new Select(primaryreview_one);
 		select1.selectByVisibleText(Rev_one);
 
-		WebElement forward_chairman_button = GWait.Wait_GetElementById("assign");
+		WebElement forward_chairman_button = GWait.Wait_GetElementById("forward_chairman");
 		forward_chairman_button.click();
 		Thread.sleep(3500);
 		WebElement LogOut2 = GWait.Wait_GetElementByXpath("//span/a");
@@ -788,8 +788,8 @@ public class TS_189 {
 		logo11.click();
 
 		GlobalMethods.CPLogin();
-		WebElement Sae_dashboard1 = GWait.Wait_GetElementByXpath("//li[8]/a/span");
-		Sae_dashboard1.click();
+		WebElement Expe_dashboard1 = GWait.Wait_GetElementByXpath("//div/div/ul[1]/li[2]/a/span[1]");
+		Expe_dashboard1.click();
 		gps.CP_SubmitProjectTo_MS();
 		Thread.sleep(3500);
 		WebElement LogOut3 = GWait.Wait_GetElementByXpath("//span/a");
@@ -801,8 +801,8 @@ public class TS_189 {
 		// ****
 		GlobalMethods.MS_Login();
 
-		WebElement Sae_dashboard11 = GWait.Wait_GetElementByXpath("//li[8]/a/span");
-		Sae_dashboard11.click();
+		WebElement Expe_dashboard11 = GWait.Wait_GetElementByXpath("//div/div/ul[1]/li[2]/a/span[1]");
+		Expe_dashboard11.click();
 
 		WebElement Projectoverview11 = GWait.Wait_GetElementByXpath("//td[10]/a/span");
 		Projectoverview11.click();

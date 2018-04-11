@@ -2,6 +2,9 @@ package com.create4.execution;
 
 import java.io.FileInputStream;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -37,11 +40,11 @@ public class Cont_docstat_msdcsn_TS_84{
 	
 	
 
-	@AfterMethod
+/*	@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
 	
 
-	}
+	}*/
 
 }

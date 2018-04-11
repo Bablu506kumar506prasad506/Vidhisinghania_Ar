@@ -531,43 +531,25 @@ public class Global_Project_Submissions {
 						save_button2.click();
 
 					}
-
+					break;
 				}
 
-				Thread.sleep(2000);
 				((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-				WebElement doctype_title = GWait.Wait_GetElementByXpath("//div[@id='list_documents']/div/div/table/tbody/tr/td[2]");
-
-				String doctype_title1 = doctype_title.getText();
-				System.out.println(doctype_title1);
-				doctype_title1.equalsIgnoreCase(Document_Title_in_list);
-
-				String doctype_version1 = doctype_version.getText();
-				System.out.println(doctype_version1);
-				doctype_version1.equalsIgnoreCase(Version_in_list);
-
-				String doctype_date1 = doctype_date.getText();
-				System.out.println(doctype_date1);
-				doctype_date1.equalsIgnoreCase(Document_Date_in_list);
-
+				Thread.sleep(6000);
 				WebElement next_button1 = GWait.Wait_GetElementById("nextid");
-
 				next_button1.click();
 
 				// submitting full board project to admin
 
 				WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
 				submit_to_IEC.click();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				WebElement no=GWait.Wait_GetElementByXpath("//form[@id='conflictsubmit']/div/div/div/div/input[2]");
-				//WebElement No1 = GWait.Wait_GetElementByXpath("//form[@id='conflictsubmit']/div/div/div/div/input[2]");
 				no.click();
 				
 				WebElement conflictsubmit = GWait.Wait_GetElementById("submit_for_iec_review_confirm");
 				conflictsubmit.click();
 				GlobalMethods.alertaccept();
-				Thread.sleep(3000);
-				
 				
 	}
 	

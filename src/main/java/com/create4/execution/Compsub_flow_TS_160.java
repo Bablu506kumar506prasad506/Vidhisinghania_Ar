@@ -91,11 +91,9 @@ public class Compsub_flow_TS_160 {
 
 	}
 
-
 	@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
-	
 	}
 
 }

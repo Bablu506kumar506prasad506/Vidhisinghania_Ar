@@ -711,7 +711,7 @@ public class TS_161 {
 		String doc_upload = r1.getCell(5, 9).getContents();
 
 		gps.PI_SubmitProject_IECAdmin();
-		Thread.sleep(3500);
+		Thread.sleep(5000);
 		WebElement LogOut = GWait.Wait_GetElementByXpath("//span/a");
 		LogOut.click();
 		WebElement logo = GWait.Wait_GetElementByCSS("img");
@@ -889,7 +889,7 @@ public class TS_161 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
@@ -1028,7 +1028,7 @@ public class TS_161 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");

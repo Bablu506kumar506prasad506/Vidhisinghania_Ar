@@ -117,6 +117,7 @@ public class TS_101 {
 		String Currentdate_data = r1.getCell(2, 87).getContents();
 
 		// -------Start date(Current Date)-------//
+		WebElement StartDate = GWait.Wait_GetElementByCSS(".form-control");
 		StartDate.clear();
 		StartDate.sendKeys(Currentdate_data);
 		WebElement SearchBTN = GWait.Wait_GetElementByCSS(".btn.btn-default.btn-orange");
@@ -141,7 +142,7 @@ public class TS_101 {
 		Sheet r1 = wb1.getSheet("Meetings");
 
 		String AlertText_data = r1.getCell(2, 89).getContents();
-
+		WebElement StartDate = GWait.Wait_GetElementByCSS(".form-control");
 		StartDate.clear();
 		WebElement SearchBTN = GWait.Wait_GetElementByCSS(".btn.btn-default.btn-orange");
 		SearchBTN.click();

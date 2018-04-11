@@ -619,6 +619,7 @@ public class TS_83 {
 
 		Thread.sleep(2000);
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
+		Thread.sleep(2000);
 		WebElement next_button2 = GWait.Wait_GetElementById("nextid");
 		next_button2.click();
 

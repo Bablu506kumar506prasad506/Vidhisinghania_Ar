@@ -531,6 +531,7 @@ public class TS_52 {
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
 			WebElement docdrop1 = GWait.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
+			Thread.sleep(2000);
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			//Thread.sleep(5000);
@@ -824,6 +825,7 @@ public class TS_52 {
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
 			WebElement docdrop1 = GWait.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
+			Thread.sleep(2000);
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			//Thread.sleep(5000);
@@ -1120,8 +1122,9 @@ public class TS_52 {
 		System.out.println("count"+querydocount);
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
 			querydocount = docvalue1.size();
-			Thread.sleep(2000);
+			
 			WebElement docdrop1 = GWait.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
+			Thread.sleep(2000);
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			//Thread.sleep(5000);
@@ -1415,6 +1418,7 @@ public class TS_52 {
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
 			WebElement docdrop1 = GWait.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
+			Thread.sleep(2000);
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			//Thread.sleep(5000);
@@ -1710,6 +1714,7 @@ public class TS_52 {
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
 			WebElement docdrop1 = GWait.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
+			Thread.sleep(2000);
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			//Thread.sleep(5000);

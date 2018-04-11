@@ -73,6 +73,14 @@ public class Othrsub_flow_TS_190 {
 		i1.CRe4_2310_2336();
 
 	}
+	
+	@Test
+	public void CRe4_2333_2334_2335() throws Exception {
+
+		TS_190 i1 = new TS_190();
+		i1.CRe4_2333_2334_2335();
+
+	}
 
 	@AfterMethod
 	public void tearDown() throws Exception {

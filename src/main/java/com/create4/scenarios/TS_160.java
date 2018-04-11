@@ -1,6 +1,7 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -644,9 +645,17 @@ public class TS_160 {
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		Thread.sleep(2000);
-		WebElement doc_view_icon_open = GWait.Wait_GetElementByCSS("i.fa.fa-eye");
-		doc_view_icon_open.click();
+		
+		WebElement table_element = GWait.Wait_GetElementByCSS(".table.table-striped>tbody");
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) table_element.findElements(By.tagName("tr"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.xpath("//td[5]/a[1]/i"));
+			for (WebElement cell : cells) {
+				cell.click();
+				break;
+			}
+			break;
+		}
 		Thread.sleep(3000);
 		WebElement doc_view_close = GWait.Wait_GetElementByXpath(".//*[@id='viewDocument']/div[2]/div/div[1]/button");
 		doc_view_close.click();
@@ -664,7 +673,9 @@ public class TS_160 {
 		amend_doc_date.equalsIgnoreCase(amend_document_date_1);
 		System.out.println(amend_document_date_1);
 
-		WebElement saved_document_edit = GWait.Wait_GetElementByCSS("i.fa.fa-edit");
+		Thread.sleep(3000);
+		GWait.blockUI();
+		WebElement saved_document_edit = GWait.Wait_GetElementByXpath("//div[1]/div/div[1]/table/tbody/tr[1]/td[5]/a[2]/i");
 
 		saved_document_edit.click();
 
@@ -1029,7 +1040,7 @@ public class TS_160 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
@@ -1165,7 +1176,7 @@ public class TS_160 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");

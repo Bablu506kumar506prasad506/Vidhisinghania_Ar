@@ -58,6 +58,7 @@
 					<include name="CRe4_2305_T" />
 					<include name="CRe4_2309_T" />
 					<include name="CRe4_2310_2336_T" />
+					<include name="CRe4_2333_2334_2335_T"/>
 				</methods>
 			</class> 
 			
@@ -79,6 +80,7 @@
 					<include name="CRe4_2305" />
 					<include name="CRe4_2309" />
 					<include name="CRe4_2310_2336" />
+					<include name="CRe4_2333_2334_2335"/>
 				</methods>
 			</class> 
 			

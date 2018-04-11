@@ -515,7 +515,7 @@ public class TS_57 {
 
 		asignreviewers1.click();
 
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		WebElement assign_button = GWait.Wait_GetElementById("assign");
 		assign_button.click();
 		Thread.sleep(2000);
@@ -645,19 +645,19 @@ public class TS_57 {
 
 		Thread.sleep(2000);
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		WebElement submitid2 = GWait.Wait_GetElementById("submitid");
-				submitid2.click();
-
+		
 		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
 		submit_to_IEC.click();
 
 		Thread.sleep(2000);
 
 		WebElement no1 = GWait.Wait_GetElementByXpath("(//input[@name='studyteam_members'])[2]");
+		Thread.sleep(2000);
 		no1.click();
 		WebElement conflictsubmit = GWait.Wait_GetElementById("submit_for_iec_review_confirm");
 		conflictsubmit.click();
 		GlobalMethods.alertaccept();
+		Thread.sleep(3000);
 
 		//**************************Normal Flow after Completion document*****************************
 
@@ -989,20 +989,18 @@ public class TS_57 {
 
 		Thread.sleep(2000);
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		WebElement submitid2 = GWait.Wait_GetElementById("submitid");
-				submitid2.click();
-
+	
 		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
 		submit_to_IEC.click();
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 		WebElement no1 = GWait.Wait_GetElementByXpath("(//input[@name='studyteam_members'])[2]");
 		no1.click();
 		WebElement conflictsubmit = GWait.Wait_GetElementById("submit_for_iec_review_confirm");
 		conflictsubmit.click();
 		GlobalMethods.alertaccept();
-
+        Thread.sleep(3000);
 		//**************************Normal Flow after Completion document*****************************
 
 		gp.Global_PILoginstatus_Verify("Pushpa Project_1213_to_1220","Approved","SAE","Submitted to IEC");

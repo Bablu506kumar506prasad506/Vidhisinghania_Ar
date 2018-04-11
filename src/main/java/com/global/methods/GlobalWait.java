@@ -41,6 +41,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementXpath;
 	}
 		
@@ -57,6 +58,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementIDs;
 	}
 	
@@ -72,6 +74,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementNames;
 
 	}
@@ -88,6 +91,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementCN;
 	}
 	
@@ -103,6 +107,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementcss;
 	}
 	
@@ -118,6 +123,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementLT;
 	}
 	
@@ -133,6 +139,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementTN;
 	}
 	
@@ -148,6 +155,7 @@ public class GlobalWait {
 			}
 		});
 		LoadGif();
+		blockUI();
 		return elementPLT;
 	}
 	

@@ -1,6 +1,7 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -623,7 +624,7 @@ public class TS_157 {
 
 		System.out.println(docvalue1.size() - 1);
 
-		for (int i = 1; i <= docvalue1.size() - 10; i++) {
+		for (int i = 1; i <= docvalue1.size() - 1; i++) {
 			Thread.sleep(4000);
 			GWait.LoadGif();
 			docdrop1.click();
@@ -650,13 +651,25 @@ public class TS_157 {
 				save_button2.click();
 
 			}
-//			break;
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		Thread.sleep(3000);
-		WebElement doc_view_icon_open = GWait.Wait_GetElementByCSS("i.fa.fa-eye");
-		doc_view_icon_open.click();
+		
+		WebElement table_element = GWait.Wait_GetElementByCSS(".table.table-striped>tbody");
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) table_element.findElements(By.tagName("tr"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.xpath("//td[5]/a[1]/i"));
+			for (WebElement cell : cells) {
+				cell.click();
+				break;
+			}
+			break;
+		}
+		/*Thread.sleep(6000);
+		GWait.blockUI();
+		WebElement doc_view_icon_open = GWait.Wait_GetElementByXpath("//div[5]/div[1]/div/div[1]/table/tbody/tr[1]/td[5]/a[1]/i");
+		doc_view_icon_open.click();*/
 		Thread.sleep(3000);
 		WebElement doc_view_close = GWait.Wait_GetElementByXpath(".//*[@id='viewDocument']/div[2]/div/div[1]/button");
 		doc_view_close.click();
@@ -673,8 +686,9 @@ public class TS_157 {
 		String amend_document_date_1 = amend_document_date.getText();
 		amend_doc_date.equalsIgnoreCase(amend_document_date_1);
 		System.out.println(amend_document_date_1);
-
-		WebElement saved_document_edit = GWait.Wait_GetElementByCSS("i.fa.fa-edit");
+		Thread.sleep(3000);
+		GWait.blockUI();
+		WebElement saved_document_edit = GWait.Wait_GetElementByXpath("//div[1]/div/div[1]/table/tbody/tr[1]/td[5]/a[2]/i");
 
 		saved_document_edit.click();
 
@@ -688,8 +702,8 @@ public class TS_157 {
 
 		System.out.println(document_version_in_edit.getAttribute("value"));
 
+		Thread.sleep(3000);
 		WebElement edit_doc_title = GWait.Wait_GetElementById("document_title_edit");
-
 		edit_doc_title.clear();
 		edit_doc_title.sendKeys(amend_doc_title_edit);
 
@@ -702,6 +716,7 @@ public class TS_157 {
 
 		WebElement edit_doc_delete = GWait.Wait_GetElementByLinkText("Delete");
 		edit_doc_delete.click();
+		
 		WebElement edit_doc_upload = GWait.Wait_GetElementById("proj_document");
 		edit_doc_upload.sendKeys(amend_doc_upload_edit);
 
@@ -1015,7 +1030,8 @@ public class TS_157 {
 		System.out.println(docvalue1.size() - 1);
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
+			GWait.LoadGif();
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			List<WebElement> elementsList3 = docvalue1;
@@ -1040,7 +1056,7 @@ public class TS_157 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
@@ -1149,7 +1165,8 @@ public class TS_157 {
 		System.out.println(docvalue1.size() - 1);
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
+			GWait.LoadGif();
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
 			List<WebElement> elementsList3 = docvalue1;
@@ -1174,7 +1191,7 @@ public class TS_157 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");

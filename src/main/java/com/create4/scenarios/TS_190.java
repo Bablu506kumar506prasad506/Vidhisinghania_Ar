@@ -888,7 +888,7 @@ public class TS_190 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
@@ -1029,11 +1029,12 @@ public class TS_190 {
 				save_button2.click();
 
 			}
-
+			break;
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+		GWait.blockUI();
 		WebElement next_button1 = GWait.Wait_GetElementById("nextid");
 		next_button1.click();
 		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");

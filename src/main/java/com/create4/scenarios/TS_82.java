@@ -526,6 +526,7 @@ public class TS_82 {
 		System.out.println(docvalue1.size() - 1);
 
 		for (int i = 1; i <= docvalue1.size() - 1; i++) {
+			Thread.sleep(2000);
 			WebElement docdrop1 = GWait.Wait_GetElementByXpath("//*[@id='submitnewuploadproject']/div/div[1]/div[2]/div/div/button");
 			docdrop1.click();
 			String numberAsString = Integer.toString(i);
