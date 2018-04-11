@@ -164,6 +164,18 @@
 					<include name="CRe4_152_153" />
 				</methods>
 			</class>
+			<class name="com.create4.execution.CntctUs_fnctnlty_TS_92">
+				<methods>
+					<include name="CRe4_735_to_746" />
+					<include name="CRe4_747_748"/>
+				</methods>
+			</class>
+			<class name="com.create4.execution.Feedback_fnctnlty_TS_93">
+				<methods>
+					<include name="CRe4_749_to_759" />
+					<include name="CRe4_760_761"/>
+				</methods>
+			</class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
