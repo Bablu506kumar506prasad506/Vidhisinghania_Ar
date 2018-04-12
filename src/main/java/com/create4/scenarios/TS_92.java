@@ -105,7 +105,9 @@ GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 
 		String fieldmsg = r1.getCell(4, 127).getContents();
 		
-		WebElement institute_Link= GWait.Wait_GetElementByLinkText("Rainbow Hospitals");
+		Sheet r11 = wb.getSheet("Institute_Logins");
+		String PI_Institute = r11.getCell(0, 2).getContents();
+		WebElement institute_Link = GWait.Wait_GetElementByLinkText(PI_Institute);
 		institute_Link.click();
 
 		WebElement contactuslink= GWait.Wait_GetElementByLinkText("Contact Us");
@@ -172,7 +174,9 @@ GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 
 		String fieldmsg = r1.getCell(4, 129).getContents();
 		
-		WebElement institute_Link= GWait.Wait_GetElementByLinkText("Rainbow Hospitals");
+		Sheet r11 = wb.getSheet("Institute_Logins");
+		String PI_Institute = r11.getCell(0, 2).getContents();
+		WebElement institute_Link = GWait.Wait_GetElementByLinkText(PI_Institute);
 		institute_Link.click();
 
 		WebElement contactuslink= GWait.Wait_GetElementByLinkText("Contact Us");

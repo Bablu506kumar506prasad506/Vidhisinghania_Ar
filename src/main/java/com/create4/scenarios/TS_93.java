@@ -2,6 +2,7 @@ package com.create4.scenarios;
 
 import java.io.FileInputStream;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -170,7 +171,9 @@ GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 		String response_reply_msg = r1.getCell(25, 131).getContents();
 		
 		//KEM Institute & Hospitals
-		WebElement institute_Link= GWait.Wait_GetElementByLinkText("Rainbow Hospitals");
+		Sheet r11 = wb.getSheet("Institute_Logins");
+		String PI_Institute = r11.getCell(0, 2).getContents();
+		WebElement institute_Link = GWait.Wait_GetElementByLinkText(PI_Institute);
 		institute_Link.click();
 		WebElement feedbacklink= GWait.Wait_GetElementByLinkText("Feedback");
 		feedbacklink.click();
@@ -327,8 +330,11 @@ GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 		String formnumber = r1.getCell(4, 133).getContents();
 		String formdescription = r1.getCell(5, 133).getContents();
 
-		WebElement institute_Link= GWait.Wait_GetElementByLinkText("Rainbow Hospitals");
+		Sheet r11 = wb.getSheet("Institute_Logins");
+		String PI_Institute = r11.getCell(0, 2).getContents();
+		WebElement institute_Link = GWait.Wait_GetElementByLinkText(PI_Institute);
 		institute_Link.click();
+		
 		WebElement feedbacklink= GWait.Wait_GetElementByLinkText("Feedback");
 		feedbacklink.click();
 		

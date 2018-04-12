@@ -40,7 +40,7 @@
 					<include name="CRe4_867"></include>
 					<include name="CRe4_868"></include>
 					<include name="CRe4_869"></include>
-					<include name="CRe4_870_871_872_873_874_875"></include>
+					<include name="CRe4_870_871_872_873_874_875"/>
 
 				</methods>
 			</class>
@@ -84,8 +84,8 @@
 			<class name="com.create4.execution.Dept_add_TS_12A">
 				<methods>
 
-					<include name="CRe4_917_18_19_10"></include>
-					<include name="CRe4_920"></include>
+					<include name="CRe4_917_18_19_10"/>
+					<include name="CRe4_920"/>
 
 				</methods>
 			</class>
@@ -93,7 +93,7 @@
 			<class name="com.create4.execution.Dept_Update_TS_13A">
 				<methods>
 
-					<include name="CRe4_913_CRe4_910_CRe4_914_CRe4_916"></include>
+					<include name="CRe4_913_CRe4_910_CRe4_914_CRe4_916"/>
 
 				</methods>
 			</class>
@@ -101,8 +101,8 @@
 			<class name="com.create4.execution.Qual_add_TS_14A">
 				<methods>
 
-					<include name="CRe4_928"></include>
-					<include name="CRe4_930"></include>
+					<include name="CRe4_928"/>
+					<include name="CRe4_930"/>
 
 				</methods>
 			</class>
@@ -266,12 +266,12 @@
 			<class name="com.create4.execution.Announcement_add_TS_35">
 				<methods>
 
-					<include name="CRe4_1145()"></include>
-					<include name="CRe4_1146()"></include>
+					<include name="CRe4_1145()"/>
+					<include name="CRe4_1146()"/>
 
-					<include name="CRe4_1147_48()"></include>
-					<include name="CRe4_1149_53()"></include>
-					<include name="CRe4_1150_51_52()"></include>
+					<include name="CRe4_1147_48()"/>
+					<include name="CRe4_1149_53()"/>
+					<include name="CRe4_1150_51_52()"/>
 
 				</methods>
 			</class>
@@ -279,8 +279,8 @@
 			<class name="com.create4.execution.Announcement_view_TS_34">
 				<methods>
 
-					<include name="CRe4_1136_37_38()"></include>
-					<include name="CRe4_1139_to_44()"></include>
+					<include name="CRe4_1136_37_38()"/>
+					<include name="CRe4_1139_to_44()"/>
 
 				</methods>
 			</class>
@@ -288,7 +288,7 @@
 			<class name="com.create4.execution.Announcement_Update_TS_36">
 				<methods>
 
-					<include name="CRe4_1154_55()"></include>
+					<include name="CRe4_1154_55()"/>
 
 				</methods>
 			</class>

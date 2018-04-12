@@ -3,12 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.create4.execution.Othrsub_flow_TS_190">
+      <class name="com.create4.execution.Compsub_flow_TS_160">
         <methods>
+          <include name="CRe4_CRe4_2260_2261_2262_2263"/>
+          <include name="CRe4_2276"/>
+          <include name="tearDown"/>
+          <include name="CRe4_2259"/>
+          <include name="CRe4_2264"/>
           <include name="beforeMethod"/>
-          <include name="CRe4_2310_2336"/>
+          <include name="CRe4_2257_2258"/>
         </methods>
-      </class> <!-- com.create4.execution.Othrsub_flow_TS_190 -->
+      </class> <!-- com.create4.execution.Compsub_flow_TS_160 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

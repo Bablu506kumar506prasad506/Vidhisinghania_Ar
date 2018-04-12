@@ -43,13 +43,13 @@ public class Terminationsub_flow_TS_161 {
 
 	}
 
-	@Test
+	/*@Test
 	public void CRe4_2303_2304_T() throws Exception {
 
 		TS_161 i1 = new TS_161();
 		i1.CRe4_2303_2304_T();
 
-	}
+	}*/
 
 	@Test
 	public void CRe4_2305_T() throws Exception {

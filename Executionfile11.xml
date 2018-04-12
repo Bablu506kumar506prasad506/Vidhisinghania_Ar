@@ -90,7 +90,7 @@
 					<include name="CRe4_296" />
 					<include name="CRe4_298_299_300" />
 				</methods>
-			</class>
+			</class> 
 
 			<class name="com.create4.execution.Cmpltdmtng_inAdmin_TS_101">
 				<methods>
