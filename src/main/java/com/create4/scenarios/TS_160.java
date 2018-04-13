@@ -676,21 +676,9 @@ public class TS_160 {
 		Thread.sleep(3000);
 		GWait.blockUI();
 		WebElement saved_document_edit = GWait.Wait_GetElementByXpath("//div[1]/div/div[1]/table/tbody/tr[1]/td[5]/a[2]/i");
-
 		saved_document_edit.click();
-
-		System.out.println(submission_type_in_edit.getText());
-
-		System.out.println(document_type_in_edit.getAttribute("value"));
-
-		System.out.println(document_date_in_edit.getAttribute("value"));
-
-		System.out.println(document_title_in_edit.getAttribute("value"));
-
-		System.out.println(document_version_in_edit.getAttribute("value"));
-
+		Thread.sleep(4000);
 		WebElement edit_doc_title = GWait.Wait_GetElementById("document_title_edit");
-
 		edit_doc_title.clear();
 		edit_doc_title.sendKeys(amend_doc_title_edit);
 
@@ -700,9 +688,10 @@ public class TS_160 {
 
 		edit_doc_date.clear();
 		edit_doc_date.sendKeys(amend_doc_date_edit);
-
+		Thread.sleep(2000);
 		WebElement edit_doc_delete = GWait.Wait_GetElementByLinkText("Delete");
 		edit_doc_delete.click();
+		Thread.sleep(2000);
 		WebElement edit_doc_upload = GWait.Wait_GetElementById("proj_document");
 		edit_doc_upload.sendKeys(amend_doc_upload_edit);
 

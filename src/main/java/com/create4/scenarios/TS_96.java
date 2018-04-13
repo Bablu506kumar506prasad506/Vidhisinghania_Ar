@@ -202,7 +202,7 @@ GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 		Workbook wb1 = Workbook.getWorkbook(fi1);
 		Sheet r1 = wb1.getSheet("Meetings");
 		String Enddate_data = r1.getCell(2, 15).getContents();
-		StartDate.clear();
+		Thread.sleep(1000);
 		EndDate.clear();
 		EndDate.sendKeys(Enddate_data);
 		WebElement SearchBTN = GWait.Wait_GetElementByXpath("//div[3]/div[1]/form/div[3]/div/input[2]");

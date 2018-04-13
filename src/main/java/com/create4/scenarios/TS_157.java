@@ -655,12 +655,14 @@ public class TS_157 {
 		}
 
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		
+		Thread.sleep(2000);
 		WebElement table_element = GWait.Wait_GetElementByCSS(".table.table-striped>tbody");
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) table_element.findElements(By.tagName("tr"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.xpath("//td[5]/a[1]/i"));
 			for (WebElement cell : cells) {
+				Thread.sleep(2000);
+				GWait.blockUI();
 				cell.click();
 				break;
 			}
@@ -691,16 +693,6 @@ public class TS_157 {
 		WebElement saved_document_edit = GWait.Wait_GetElementByXpath("//div[1]/div/div[1]/table/tbody/tr[1]/td[5]/a[2]/i");
 
 		saved_document_edit.click();
-
-		System.out.println(submission_type_in_edit.getText());
-
-		System.out.println(document_type_in_edit.getAttribute("value"));
-
-		System.out.println(document_date_in_edit.getAttribute("value"));
-
-		System.out.println(document_title_in_edit.getAttribute("value"));
-
-		System.out.println(document_version_in_edit.getAttribute("value"));
 
 		Thread.sleep(3000);
 		WebElement edit_doc_title = GWait.Wait_GetElementById("document_title_edit");

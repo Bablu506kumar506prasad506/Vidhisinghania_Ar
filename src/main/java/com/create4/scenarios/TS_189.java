@@ -632,6 +632,8 @@ public class TS_189 {
 		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
 		submit_to_IEC.click();
 		Thread.sleep(5000);
+		GWait.blockUI();
+		GWait.LoadGif();
 		WebElement no = GWait.Wait_GetElementByXpath("//div/div[2]/form/div[1]/div[1]/div[1]/div/input[2]");
 		no.click();
 		WebElement conflictsubmit = GWait.Wait_GetElementByXpath("//*[@id='submit_for_iec_review_confirm']");

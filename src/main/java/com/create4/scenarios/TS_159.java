@@ -689,7 +689,7 @@ public class TS_159 {
 		WebElement saved_document_edit = GWait.Wait_GetElementByXpath("//div[1]/div/div[1]/table/tbody/tr[1]/td[5]/a[2]/i");
 
 		saved_document_edit.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		WebElement edit_doc_title = GWait.Wait_GetElementById("document_title_edit");
 		edit_doc_title.clear();
 		edit_doc_title.sendKeys(amend_doc_title_edit);

@@ -1,73 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="426402" started-at="2018-04-12T13:27:22Z" finished-at="2018-04-12T13:34:28Z">
+  <suite name="Default suite" duration-ms="33086" started-at="2018-04-13T13:19:57Z" finished-at="2018-04-13T13:20:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="426402" started-at="2018-04-12T13:27:22Z" finished-at="2018-04-12T13:34:28Z">
-      <class name="com.create4.execution.Compsub_flow_TS_160">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="beforeMethod" is-config="true" duration-ms="8959" started-at="2018-04-12T18:57:22Z" finished-at="2018-04-12T18:57:31Z">
+    <test name="Default test" duration-ms="33086" started-at="2018-04-13T13:19:57Z" finished-at="2018-04-13T13:20:30Z">
+      <class name="com.create4.execution.Generate_agenda_TS_96">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.create4.execution.Generate_agenda_TS_96@3bfdc050]" name="beforeMethod" is-config="true" duration-ms="11391" started-at="2018-04-13T18:49:57Z" finished-at="2018-04-13T18:50:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CRe4_2252_2253_2254_2255()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="CRe4_2252_2253_2254_2255" duration-ms="40340" started-at="2018-04-12T18:57:31Z" finished-at="2018-04-12T18:58:11Z">
+        <test-method status="PASS" signature="CRe4_204_209()[pri:0, instance:com.create4.execution.Generate_agenda_TS_96@3bfdc050]" name="CRe4_204_209" duration-ms="21665" started-at="2018-04-13T18:50:09Z" finished-at="2018-04-13T18:50:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CRe4_2252_2253_2254_2255 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="tearDown" is-config="true" duration-ms="28" started-at="2018-04-12T18:58:11Z" finished-at="2018-04-12T18:58:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="beforeMethod" is-config="true" duration-ms="7933" started-at="2018-04-12T18:58:11Z" finished-at="2018-04-12T18:58:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CRe4_2259()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="CRe4_2259" duration-ms="9809" started-at="2018-04-12T18:58:19Z" finished-at="2018-04-12T18:58:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CRe4_2259 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="tearDown" is-config="true" duration-ms="31" started-at="2018-04-12T18:58:29Z" finished-at="2018-04-12T18:58:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="beforeMethod" is-config="true" duration-ms="8485" started-at="2018-04-12T18:58:29Z" finished-at="2018-04-12T18:58:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CRe4_2264()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="CRe4_2264" duration-ms="96270" started-at="2018-04-12T18:58:37Z" finished-at="2018-04-12T19:00:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CRe4_2264 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="tearDown" is-config="true" duration-ms="14" started-at="2018-04-12T19:00:13Z" finished-at="2018-04-12T19:00:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="beforeMethod" is-config="true" duration-ms="8466" started-at="2018-04-12T19:00:13Z" finished-at="2018-04-12T19:00:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CRe4_2276()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="CRe4_2276" duration-ms="19300" started-at="2018-04-12T19:00:22Z" finished-at="2018-04-12T19:00:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CRe4_2276 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="tearDown" is-config="true" duration-ms="26" started-at="2018-04-12T19:00:41Z" finished-at="2018-04-12T19:00:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="beforeMethod" is-config="true" duration-ms="7398" started-at="2018-04-12T19:00:41Z" finished-at="2018-04-12T19:00:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CRe4_CRe4_2260_2261_2262_2263()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="CRe4_CRe4_2260_2261_2262_2263" duration-ms="219283" started-at="2018-04-12T19:00:49Z" finished-at="2018-04-12T19:04:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CRe4_CRe4_2260_2261_2262_2263 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.create4.execution.Compsub_flow_TS_160@1bce4f0a]" name="tearDown" is-config="true" duration-ms="30" started-at="2018-04-12T19:04:28Z" finished-at="2018-04-12T19:04:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.create4.execution.Compsub_flow_TS_160 -->
+        </test-method> <!-- CRe4_204_209 -->
+      </class> <!-- com.create4.execution.Generate_agenda_TS_96 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

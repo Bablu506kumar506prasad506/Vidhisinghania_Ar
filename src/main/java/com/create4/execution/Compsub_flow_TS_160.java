@@ -51,13 +51,13 @@ public class Compsub_flow_TS_160 {
 
 	}
 
-	/*@Test
+	@Test
 	public void CRe4_2257_2258() throws Exception {
 
 		TS_160 i1 = new TS_160();
 		i1.CRe4_2257_2258();
 
-	}*/
+	}
 
 	@Test
 	public void CRe4_2259() throws Exception {

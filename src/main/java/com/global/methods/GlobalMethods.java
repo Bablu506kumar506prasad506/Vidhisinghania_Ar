@@ -25,6 +25,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -92,7 +93,9 @@ public class GlobalMethods {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "/src/main/resources/win/chromedriver.exe");
 			driver = new ChromeDriver();
-		} else if (browserName.equals("IE")) {
+		} else if (browserName.equals("ie")) {
+			System.setProperty("webdriver.ie.driver",
+					System.getProperty("user.dir") + "/src/main/resources/win/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
 
