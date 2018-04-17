@@ -93,6 +93,8 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>Executionfile11.xml</suiteXmlFile>
 						<file>src/test/resources/Executionfile4.xml</file>
+						<file>src/test/resources/Executionfile5.xml</file>
+						<file>src/test/resources/Executionfile6.xml</file>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
