@@ -1,8 +1,12 @@
 package com.global.methods;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
+
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -10,6 +14,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 import com.global.methods.GlobalMethods;
 import com.global.methods.GlobalWait;
 
@@ -30,12 +36,14 @@ public class Dashboard_Links {
 
 	
 	
-	public int querydoccount=0;
+
+	public static int querydoccount=0;
 	
 	
 
 	// --PI SUBMITTING EXEMPT PROJECT TO IEC ADMIN--//
 	public void EMNEWSUBMISSION() throws Exception {
+
 
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
@@ -85,9 +93,9 @@ public class Dashboard_Links {
 			System.out.println(span.getText());
 			if (span.getText().equalsIgnoreCase(Review_Type_exempt)) {
 
+				String doc = span.getText();
 				span.click();
-				String text = span.getText();
-				System.out.println(text);
+				System.out.println(doc);
 				break;
 			}
 		}
@@ -126,7 +134,9 @@ public class Dashboard_Links {
 				System.out.println(span.getAttribute("data-original-index"));
 				if (i == j) {
 					Thread.sleep(2000);
+					String doc = span.getText();
 					span.click();
+					System.out.println(doc);
 
 					break;
 				}
@@ -185,6 +195,7 @@ public class Dashboard_Links {
 
 	// --PI SUBMITTING EXPEDITED PROJECT TO IEC ADMIN--//
 	public void EXPNEWSUBMISSION() throws Exception {
+
 
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
@@ -258,12 +269,12 @@ public class Dashboard_Links {
 
 		Thread.sleep(2000);
 		System.out.println(docvalue.size() - 1);
-		int count = querydoccount = docvalue.size();
+		
 
 		for (int i = 1; i <= docvalue.size() - 1; i++) {
+			querydoccount = docvalue.size();
 			Thread.sleep(10000);
-			WebElement docdrop = GWait.Wait_GetElementByXpath(
-					"html/body/div[5]/div[1]/div[3]/div[4]/div[2]/form/div/div[1]/div[1]/div/div/div/button");
+			WebElement docdrop = GWait.Wait_GetElementByXpath("html/body/div[5]/div[1]/div[3]/div[4]/div[2]/form/div/div[1]/div[1]/div/div/div/button");
 			docdrop.click();
 			String numberAsString = Integer.toString(i);
 			Thread.sleep(5000);
@@ -275,7 +286,9 @@ public class Dashboard_Links {
 				System.out.println(span.getAttribute("data-original-index"));
 				if (i == j) {
 					Thread.sleep(2000);
+					String doc = span.getText();
 					span.click();
+					System.out.println(doc);
 
 					break;
 				}
@@ -518,7 +531,7 @@ public class Dashboard_Links {
 		// WebElement forward_button =
 		// GWait.Wait_GetElementById("forward_modal_btn");
 		// forward_button.click();
-Thread.sleep(5000);
+        Thread.sleep(5000);
 		WebElement ethic_comments2 = GWait.Wait_GetElementByClassName("richText");
 		ethic_comments2.sendKeys(ethic_comnts);
 		Thread.sleep(5000);
@@ -539,6 +552,7 @@ Thread.sleep(5000);
 
 	// --PI SUBMITTING FULL BOARD PROJECT TO IEC ADMIN--//
 	public void FBNEWSUBMISSION() throws Exception {
+
 
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
@@ -562,8 +576,7 @@ Thread.sleep(5000);
 		WebElement createproject = GWait.Wait_GetElementByLinkText("Submit New Project");
 		createproject.click();
 
-		WebElement projtypdrop = GWait
-				.Wait_GetElementByXpath(".//*[@id='projectsummary']/div/div[1]/div[1]/div/div/button");
+		WebElement projtypdrop = GWait.Wait_GetElementByXpath(".//*[@id='projectsummary']/div/div[1]/div[1]/div/div/button");
 		projtypdrop.click();
 		Thread.sleep(2000);
 
@@ -576,8 +589,7 @@ Thread.sleep(5000);
 			}
 		}
 
-		WebElement revtypdrop = GWait
-				.Wait_GetElementByXpath("//*[@id='projectsummary']/div/div[2]/div[1]/div/div/button");
+		WebElement revtypdrop = GWait.Wait_GetElementByXpath("//*[@id='projectsummary']/div/div[2]/div[1]/div/div/button");
 		revtypdrop.click();
 		Thread.sleep(2000);
 
@@ -612,12 +624,12 @@ Thread.sleep(5000);
 
 		Thread.sleep(2000);
 		System.out.println(docvalue.size() - 1);
-		int count = querydoccount = docvalue.size();
+		
 
 		for (int i = 1; i <= docvalue.size() - 1; i++) {
+			querydoccount = docvalue.size();
 			Thread.sleep(10000);
-			WebElement docdrop = GWait.Wait_GetElementByXpath(
-					"html/body/div[5]/div[1]/div[3]/div[4]/div[2]/form/div/div[1]/div[1]/div/div/div/button");
+			WebElement docdrop = GWait.Wait_GetElementByXpath("html/body/div[5]/div[1]/div[3]/div[4]/div[2]/form/div/div[1]/div[1]/div/div/div/button");
 			docdrop.click();
 			String numberAsString = Integer.toString(i);
 			Thread.sleep(5000);
@@ -629,7 +641,9 @@ Thread.sleep(5000);
 				System.out.println(span.getAttribute("data-original-index"));
 				if (i == j) {
 					Thread.sleep(2000);
+					String doc = span.getText();
 					span.click();
+					System.out.println(doc);
 
 					break;
 				}
@@ -821,7 +835,7 @@ Thread.sleep(5000);
 
 		WebElement ethic_comments2 = GWait.Wait_GetElementByClassName("richText");
 		ethic_comments2.sendKeys(ethic_comnts);
-
+		Thread.sleep(2000);
 		WebElement ethic_frwd2 = GWait.Wait_GetElementById("forward_btn");
 		ethic_frwd2.click();
 
@@ -924,7 +938,7 @@ Thread.sleep(5000);
 
 		WebElement decisionusubmit = GWait.Wait_GetElementByXpath("//input[@value='Submit']");
 		decisionusubmit.click();
-
+        Thread.sleep(10000);
 		WebElement logoutt2 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt2.click();
 
@@ -4421,7 +4435,7 @@ Thread.sleep(5000);
 
 		WebElement decisionusubmit = GWait.Wait_GetElementByXpath("//input[@value='Submit']");
 		decisionusubmit.click();
-
+Thread.sleep(10000);
 		WebElement logoutt2 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt2.click();
 
@@ -4833,7 +4847,7 @@ Thread.sleep(5000);
 				String Decisioncmnt = r1.getCell(26, 21).getContents();
 				String Decision_RESUBMISSION = r1.getCell(27, 21).getContents();
 				
-		EXPNEWSUBMISSION();
+		//EXPNEWSUBMISSION();
 		EXPADMINREVIEWINITIAL();
 		
 		GlobalMethods.MS_Login();
@@ -4886,10 +4900,10 @@ Thread.sleep(5000);
 		System.out.println(docvalue2_re.size() - 1);
 
 		for (int i = 1; i <= docvalue2_re.size() - 1; i++) {
+			querydoccount = docvalue2_re.size();
 			Thread.sleep(6000);
 
-			WebElement docdrop2_re = GWait.Wait_GetElementByXpath(
-					"//html/body/div[5]/div[1]/div[2]/div[2]/div[4]/div[2]/form/div/div[1]/div[1]/div/div[1]/button");
+			WebElement docdrop2_re = GWait.Wait_GetElementByXpath("//html/body/div[5]/div[1]/div[2]/div[2]/div[4]/div[2]/form/div/div[1]/div[1]/div/div[1]/button");
 			docdrop2_re.click();
 			String numberAsString = Integer.toString(i);
 			Thread.sleep(5000);
@@ -5026,8 +5040,7 @@ Thread.sleep(5000);
 
 		WebElement frwdtocp_button = GWait.Wait_GetElementById("forward_chairman");
 		frwdtocp_button.click();
-
-		
+	
 
 		WebElement logoutt21 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt21.click();
@@ -5158,6 +5171,105 @@ Thread.sleep(5000);
 		WebElement logo = GWait.Wait_GetElementByCSS("img");
 		logo.click();
 
+	}
+	// --MS GIVES DECISION AS QUERY FOR AN INITIAL Expedited SUBMISSION--//
+	public void MSDECISION_EXPQUERY() throws Exception {
+		
+
+
+
+		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+		Workbook wb = Workbook.getWorkbook(fi);
+		Sheet r1 = wb.getSheet("Dashboard");
+		// MS data
+		String Rev_one = r1.getCell(18, 21).getContents();
+		String Rev_two = r1.getCell(19, 21).getContents();
+		String Rev_three = r1.getCell(20, 21).getContents();
+		String Rev_four = r1.getCell(21, 21).getContents();
+		String Rev_five = r1.getCell(22, 21).getContents();
+		String Rev_six = r1.getCell(23, 21).getContents();
+		String Rev_comnts = r1.getCell(24, 21).getContents();
+
+		// Decision upload data
+		String Decisionfile = r1.getCell(25, 21).getContents();
+		String Decisioncmnt = r1.getCell(26, 21).getContents();
+		String Decision_Query_letter = r1.getCell(33, 21).getContents();
+
+		EXPADMINREVIEWINITIAL();
+		
+		GlobalMethods.MS_Login();
+
+		WebElement explink = GWait.Wait_GetElementByXpath("//li[2]/a/span");
+		explink.click();
+
+		WebElement Projectoverview1 = GWait.Wait_GetElementByXpath("//td[10]/a/span");
+		Projectoverview1.click();
+
+		/*WebElement asignreviewers = GWait.Wait_GetElementByLinkText("Assign Reviewer(s)");
+		asignreviewers.click();
+
+		WebElement primaryreview_one = GWait.Wait_GetElementById("primary_reviewer");
+		Select select1 = new Select(primaryreview_one);
+		select1.selectByVisibleText(Rev_one);
+
+		WebElement nonprimaryreview_one = GWait.Wait_GetElementByName("nontech_primary_reviewer1");
+		Select select2 = new Select(nonprimaryreview_one);
+		select2.selectByVisibleText(Rev_two);
+
+		WebElement primaryreview_two = GWait.Wait_GetElementByName("tech_primary_reviewer2");
+		Select select3 = new Select(primaryreview_two);
+		select3.selectByVisibleText(Rev_three);
+
+		WebElement nonprimaryreview_two = GWait.Wait_GetElementByName("nontech_primary_reviewer2");
+		Select select4 = new Select(nonprimaryreview_two);
+		select4.selectByVisibleText(Rev_four);
+
+		WebElement primaryreview_three = GWait.Wait_GetElementByName("tech_primary_reviewer3");
+		Select select5 = new Select(primaryreview_three);
+		select5.selectByVisibleText(Rev_five);
+
+		WebElement nonprimaryreview_three = GWait.Wait_GetElementByName("nontech_primary_reviewer3");
+		Select select6 = new Select(nonprimaryreview_three);
+		select6.selectByVisibleText(Rev_six);
+
+		WebElement assign_comments = GWait.Wait_GetElementById("comments");
+		assign_comments.clear();
+
+		WebElement assign_comments1 = GWait.Wait_GetElementById("comments");
+		assign_comments1.sendKeys(Rev_comnts);
+
+		WebElement assign_button = GWait.Wait_GetElementById("assign");
+		assign_button.click();*/
+
+		Thread.sleep(20000);
+		GWait.LoadGif();
+
+		GlobalMethods.Commentswindhandler();
+		Thread.sleep(8000);
+		WebElement iecdecisiontab = GWait.Wait_GetElementByLinkText("IEC Decision");
+		iecdecisiontab.click();
+
+		WebElement decisondropdown = GWait.Wait_GetElementById("decision_type");
+		Select select7 = new Select(decisondropdown);
+		select7.selectByVisibleText(Decision_Query_letter);
+
+		WebElement decisionupload = GWait.Wait_GetElementById("proj_document");
+		decisionupload.sendKeys(Decisionfile);
+
+		WebElement assign_comments2 = GWait.Wait_GetElementById("comments");
+		assign_comments2.sendKeys(Decisioncmnt);
+
+		WebElement decisionusubmit = GWait.Wait_GetElementByXpath("//input[@value='Submit']");
+		decisionusubmit.click();
+
+		WebElement logoutt2 = GWait.Wait_GetElementByXpath("//span/a");
+		logoutt2.click();
+
+		WebElement logo81 = GWait.Wait_GetElementByCSS("img");
+		logo81.click();
+
+	
+		
 	}
 
 	// --MS GIVES DECISION AS QUERY FOR AN INITIAL SUBMISSION--//
@@ -5779,10 +5891,10 @@ Thread.sleep(5000);
 			String doc_upload = r1.getCell(10, 21).getContents();
 
 			String Query_Cmnts_Continuation = r1.getCell(32, 7).getContents();
-			EXPNEWSUBMISSION();
-			EXPADMINREVIEWINITIAL();
+			//EXPNEWSUBMISSION();
+			//EXPADMINREVIEWINITIAL();
 		
-			MSDECISION_QUERY();
+			MSDECISION_EXPQUERY();
 
 			GlobalMethods.PI_Login();
 
@@ -5809,6 +5921,7 @@ Thread.sleep(5000);
 			Thread.sleep(4000);
 			System.out.println(docvalue2.size() - 1);
 			for (int i = querydoccount; i <= docvalue2.size() - 1; i++) {
+				querydoccount = docvalue2.size();
 				Thread.sleep(8000);
 
 				docdrop2.click();

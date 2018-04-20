@@ -3,9 +3,11 @@ package com.create4.scenarios;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.NoSuchElementException;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -123,9 +125,9 @@ public class TS_94 {
 
 		// PI Register data
 
-		String PI_Reg_Institute = r.getCell(0, 14).getContents();
-		String PI_Reg_email = r.getCell(1, 14).getContents();
-		String PI_Reg_pwd = r.getCell(2, 14).getContents();
+		String PI_Reg_Institute = r.getCell(0, 2).getContents();
+		//String PI_Reg_email = r1.getCell(8, 23).getContents();
+		String PI_Reg_pwd = r1.getCell(25, 23).getContents();
 
 		String PI_firstname = r1.getCell(2, 23).getContents();
 		String PI_middlename = r1.getCell(3, 23).getContents();
@@ -284,14 +286,28 @@ public class TS_94 {
 
 		WebElement field4_changepassword = GWait.Wait_GetElementByCSS("button.btn.btn-orange");
 		field4_changepassword.click();
-
+        Thread.sleep(1000);
 		Assert.assertEquals(alert1.getText(), successalert);
 
 		WebElement logoutt1 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt1.click();
+		
+		File source = new File("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+		FileInputStream input = new FileInputStream(source);
+		HSSFWorkbook wb1 = new HSSFWorkbook(input);
 
-		WebElement email = GWait.Wait_GetElementById("register_email");
-		email.sendKeys(PI_Reg_email);
+		HSSFSheet sheet = wb1.getSheetAt(0);
+		sheet.getRow(14).createCell(2).setCellValue(newpwdvalid);
+
+		FileOutputStream output = new FileOutputStream(source);
+		wb1.write(output);
+		wb1.close();
+
+		
+		Thread.sleep(2000);
+
+	    WebElement email = GWait.Wait_GetElementById("register_email");
+		email.sendKeys(PI_email);
 
 		WebElement password = GWait.Wait_GetElementById("register_password");
 		password.sendKeys(newpwdvalid);
@@ -307,23 +323,15 @@ public class TS_94 {
 		logoutt2.click();
 		
 		
-		File source = new File("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		FileInputStream input = new FileInputStream(source);
-		HSSFWorkbook wb1 = new HSSFWorkbook(input);
-
-		HSSFSheet sheet = wb1.getSheetAt(0);
-		sheet.getRow(14).createCell(2).setCellValue(newpwdvalid);
-
-		FileOutputStream output = new FileOutputStream(source);
-		wb1.write(output);
-		wb1.close();
-
+		
 
 	}
 
 	// Check for change password form submission with Invalid confirm new
 	// password
 	public void CRe4_731_732() throws Exception {
+		
+		
 
 		GlobalMethods.PILogin4changepwd();
 
@@ -372,11 +380,13 @@ public class TS_94 {
 
 		WebElement field4_changepassword1 = GWait.Wait_GetElementByCSS("button.btn.btn-orange");
 		field4_changepassword1.click();
-
+        Thread.sleep(1000);
 		Assert.assertEquals(alert1.getText(), cnfrmpwdvalidalert);
 
 		WebElement logoutt2 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt2.click();
+		
+		 
 
 	}
 

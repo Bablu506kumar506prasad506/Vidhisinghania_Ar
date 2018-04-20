@@ -106,53 +106,67 @@ public class GlobalMethods {
 	// ------------- Super Admin Login Method-----------//
 
 	// This method is to login as Superadmin
-	public static void Super_Login() throws Exception {
+	// This method is to login as Superadmin
+		public static void Super_Login() throws Exception {
 
-		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		Workbook wb = Workbook.getWorkbook(fi);
-		Sheet r1 = wb.getSheet("Institute_Logins");
+			FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+			Workbook wb = Workbook.getWorkbook(fi);
+			Sheet r1 = wb.getSheet("Institute_Logins");
+			
+			//----- Super admin Institute click--------//
+			
+			String Super_Institute = r1.getCell(0, 1).getContents();
+			String Superadminemail = r1.getCell(1, 1).getContents();
+			String Super_Password = r1.getCell(2, 1).getContents();
+			String Super_Role = r1.getCell(3, 1).getContents();
+			System.out.println(Super_Institute);
+			WebElement SuperInstitute = GWait.Wait_GetElementByLinkText(Super_Institute);
+			SuperInstitute.click();
+			WebElement Email = GWait.Wait_GetElementById("register_email");
+			Email.sendKeys(Superadminemail);
+			driver.findElement(By.id("register_password")).sendKeys(Super_Password);
+			Select dropdown = new Select(driver.findElement(By.id("register_role")));
+			dropdown.selectByValue("8");
+			driver.findElement(By.id("login_institute")).click();
 
-		// ----- Super admin Institute click--------//
-
-		String Super_Institute = r1.getCell(0, 1).getContents();
-		String Superadminemail = r1.getCell(1, 1).getContents();
-		String Super_Password = r1.getCell(2, 1).getContents();
-		String Super_Role = r1.getCell(3, 1).getContents();
-		System.out.println(Super_Institute);
-		WebElement SuperInstitute = GWait.Wait_GetElementByLinkText(Super_Institute);
-		SuperInstitute.click();
-		WebElement Email = GWait.Wait_GetElementById("register_email");
-		Email.sendKeys(Superadminemail);
-		driver.findElement(By.id("register_password")).sendKeys(Super_Password);
-		Select dropdown = new Select(driver.findElement(By.id("register_role")));
-		dropdown.selectByValue("8");
-		driver.findElement(By.id("login_institute")).click();
-
-	}
+		}
 
 	// ------------- Principal Investigator Login Method-----------//
 
-	public static void PI_Login() throws Exception {
+		// ------------- Principal Investigator Login Method-----------//
 
-		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		Workbook wb = Workbook.getWorkbook(fi);
-		Sheet r1 = wb.getSheet("Institute_Logins");
-		String PI_Institute = r1.getCell(0, 2).getContents();
-		String PIemail = r1.getCell(1, 2).getContents();
-		String PI_Password = r1.getCell(2, 2).getContents();
-		String PI_Role = r1.getCell(3, 2).getContents();
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		public static void PI_Login() throws Exception {
 
-		driver.findElement(By.linkText(PI_Institute)).click();
-		Thread.sleep(4000);
-		driver.findElement(By.id("register_email")).sendKeys(PIemail);
-		driver.findElement(By.id("register_password")).sendKeys(PI_Password);
-		Select dropdown = new Select(driver.findElement(By.id("register_role")));
-		dropdown.selectByValue("1");
+			FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+			Workbook wb = Workbook.getWorkbook(fi);
+			Sheet r1 = wb.getSheet("Institute_Logins");
+			
+			
+			String PI_Institute = r1.getCell(0, 2).getContents();
+			String PIemail = r1.getCell(1, 2).getContents();
+			String PI_Password = r1.getCell(2, 2).getContents();
+			String PI_Role = r1.getCell(3, 2).getContents();
 
-		driver.findElement(By.id("login_institute")).click();
+			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 
-	}
+			WebElement instituteclick = GWait.Wait_GetElementByLinkText(PI_Institute);
+			instituteclick.click();
+
+			WebElement email = GWait.Wait_GetElementById("register_email");
+			email.sendKeys(PIemail);
+
+			WebElement pwd = GWait.Wait_GetElementById("register_password");
+			pwd.sendKeys(PI_Password);
+
+			WebElement role = GWait.Wait_GetElementById("register_role");
+			Select dropdown = new Select(role);
+			dropdown.selectByValue("1");
+
+			WebElement login = GWait.Wait_GetElementById("login_institute");
+			login.click();
+
+
+		}
 	// ------------- IEC Admin Login Method-----------//
 
 	public static void Admin_Login_1() throws Exception {
@@ -693,33 +707,55 @@ public class GlobalMethods {
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb1 = Workbook.getWorkbook(fi);
 
-		Sheet r1 = wb1.getSheet("Emails_Data");
+		Sheet r1 = wb1.getSheet("Data_Sheet");
 		Sheet r2 = wb1.getSheet("Login");
-		Sheet r3 = wb1.getSheet("Institute_Logins");
+		/* Sheet r3 = wb1.getSheet("Institute_Logins"); */
 
-		String Admin_Role = r3.getCell(3, 1).getContents();
 		String URL = r2.getCell(1, 0).getContents();
-		String Inst_tite = r1.getCell(0, 2).getContents();
-		String admin_email = r1.getCell(10, 2).getContents();
+
+		String Admin_Role = r1.getCell(21, 59).getContents();
+		String Inst_tite = r1.getCell(2, 59).getContents();
+		String admin_email = r1.getCell(12, 59).getContents();
+		String password = r1.getCell(22, 59).getContents();
+
 		driver.get(url);
-		driver.findElement(By.id("identifierId")).clear();
-		driver.findElement(By.id("identifierId")).sendKeys(Email);
-		driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.name("password")).clear();
-		driver.findElement(By.name("password")).sendKeys(Password);
-		driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
+
+		WebElement email_field = GWait.Wait_GetElementById("identifierId");
+		email_field.clear();
+
+		WebElement email_field1 = GWait.Wait_GetElementById("identifierId");
+		email_field1.sendKeys(Email);
+
+		WebElement nextbutton = GWait.Wait_GetElementByXpath(
+				"html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div/div/div[1]/div/content/span");
+		nextbutton.click();
+
+		WebElement pwd_field = GWait.Wait_GetElementByName("password");
+		pwd_field.clear();
+
+		WebElement pwd_field1 = GWait.Wait_GetElementByName("password");
+		pwd_field1.sendKeys(Password);
+
+		WebElement nextbutton1 = GWait.Wait_GetElementByXpath(
+				"html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div/div/div[1]/div/content/span");
+		nextbutton1.click();
+
+		WebElement link1 = GWait.Wait_GetElementByCSS(".asf.T-I-J3.J-J5-Ji");
+		link1.click();
+
+		WebElement link2 = GWait.Wait_GetElementByCSS(".asf.T-I-J3.J-J5-Ji");
+		link2.click();
 		Thread.sleep(30000);
-		driver.findElement(By.cssSelector(".asf.T-I-J3.J-J5-Ji")).click();
-		Thread.sleep(10000);
-		driver.findElement(By.cssSelector(".asf.T-I-J3.J-J5-Ji")).click();
 		System.out.println("Refresh button Clicked");
-		Thread.sleep(10000);
-		/* System.out.println("Refresh button Clicked"); */
-		Thread.sleep(10000);
-		driver.findElement(By.xpath("//span/b[text()='e-EC - You have been Registered as IEC Admin by e-EC']")).click();
-		Thread.sleep(6000);
-		driver.findElement(By.xpath("//div[starts-with(@class,'a3s aXjCH m1')]/a")).click();
+		Thread.sleep(30000);
+		Thread.sleep(30000);
+		WebElement link3 = GWait
+				.Wait_GetElementByXpath("//span/b[text()='e-EC - You have been Registered as IEC Admin by e-EC']");
+		link3.click();
+
+		WebElement link4 = GWait.Wait_GetElementByXpath("//div[starts-with(@class,'a3s aXjCH m1')]/a");
+		link4.click();
+
 		Thread.sleep(6000);
 		Thread.sleep(2000);
 
@@ -729,17 +765,16 @@ public class GlobalMethods {
 			driver.switchTo().window(winHandle);
 		}
 
-		Thread.sleep(2000);
-		driver.findElement(By.name("activation_password")).sendKeys("123456admin");
-		String Password1 = driver.findElement(By.name("activation_password")).getAttribute("Value");
-		Thread.sleep(2000);
-		driver.findElement(By.id("activation_update_id")).click();
-		Thread.sleep(6000);
-		// System.out.println(forgotspwdmsg.getText());
-		Thread.sleep(2000);
+		WebElement passd = GWait.Wait_GetElementByName("activation_password");
+		passd.sendKeys(password);
 
-		String winHandleBefore1 = "";
-		driver.switchTo().window(winHandleBefore1);
+		String Password1 = passd.getAttribute("Value");
+
+		WebElement updatebutton = GWait.Wait_GetElementById("activation_update_id");
+		updatebutton.click();
+		Thread.sleep(6000);
+
+		Thread.sleep(2000);
 
 		File source = new File("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		FileInputStream input = new FileInputStream(source);
@@ -748,12 +783,41 @@ public class GlobalMethods {
 		HSSFSheet sheet = wb.getSheetAt(0);
 		sheet.getRow(13).createCell(0).setCellValue(Inst_tite);
 		sheet.getRow(13).createCell(1).setCellValue(admin_email);
-		sheet.getRow(13).createCell(2).setCellValue("123456admin");
+		sheet.getRow(13).createCell(2).setCellValue(password);
 
 		FileOutputStream output = new FileOutputStream(source);
 		wb.write(output);
 		wb.close();
 		Thread.sleep(1000);
+
+		String winHandleBefore1 = "";
+		driver.switchTo().window(winHandleBefore1);
+
+		// After password set login to application
+
+		driver.get(URL);
+
+		WebElement institutelink = GWait.Wait_GetElementByLinkText(Inst_tite);
+		institutelink.click();
+
+		WebElement instituteemail = GWait.Wait_GetElementById(("register_email"));
+		instituteemail.sendKeys(admin_email);
+
+		WebElement institutepwd = GWait.Wait_GetElementById(("register_password"));
+		institutepwd.sendKeys(password);
+
+		WebElement instituterole = GWait.Wait_GetElementById(("register_role"));
+		Select dropdown = new Select(instituterole);
+		dropdown.selectByValue("3");
+		Thread.sleep(6000);
+
+		((JavascriptExecutor) driver).executeScript("scroll(250,0);");
+
+		WebElement institutelogin = GWait.Wait_GetElementById(("login_institute"));
+		institutelogin.click();
+
+		WebElement institutelogout = GWait.Wait_GetElementByXpath(("//span/a"));
+		institutelogout.click();
 
 	}
 

@@ -3,6 +3,7 @@ package com.create4.scenarios;
 import java.io.FileInputStream;
 import java.util.List;
 
+import org.eclipse.jetty.util.security.Password;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,8 @@ import org.testng.Assert;
 
 import com.global.methods.GlobalMethods;
 import com.global.methods.GlobalWait;
+import com.thoughtworks.selenium.webdriven.commands.Click;
+
 import jxl.Sheet;
 import jxl.Workbook;
 
@@ -581,7 +584,7 @@ public class TS_156 {
 		String studyteammem_name = r1.getCell(2, 119).getContents();
 		String studyteammem_email = r1.getCell(3, 119).getContents();
 		String studyteammem_role = r1.getCell(4, 119).getContents();
-		String studyteammem_pwd = r1.getCell(4, 119).getContents();
+		String studyteammem_pwd = r1.getCell(5, 119).getContents();
 		
 		
 
@@ -741,7 +744,7 @@ public class TS_156 {
 		logoutt3.click();
 		
 		WebElement logo3 = GWait.Wait_GetElementByCSS("img");
-		logo.click();
+		logo3.click();
 	
 		
 		WebElement institute = GWait.Wait_GetElementByLinkText(PI_Institute);
@@ -762,7 +765,7 @@ public class TS_156 {
 		
 		WebElement login =GWait.Wait_GetElementById("login_institute");
 		login.click();
-
+        Thread.sleep(6000);
 		WebElement PI_project_menu2 = GWait.Wait_GetElementByLinkText("My Projects");
 		PI_project_menu2.click();
 
@@ -782,7 +785,7 @@ public class TS_156 {
 		WebElement submit_to_IEC =GWait.Wait_GetElementById("submitid");
 		submit_to_IEC.click();
 		
-		
+		Thread.sleep(3000);
 		WebElement no =GWait.Wait_GetElementByXpath("//*[@id='conflictsubmit']/div[1]/div[1]/div[1]/div/input[2]");
 		no.click();
 		
@@ -792,7 +795,7 @@ public class TS_156 {
 		
 		Thread.sleep(3000);
 		GlobalMethods.alertaccept();
-
+		Thread.sleep(6000);
 		WebElement logoutt2 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt2.click();
 

@@ -136,7 +136,7 @@ public class TS_33 {
 		
 		WebElement IECSubmissionForms = GWait.Wait_GetElementByXpath("//html/body/div[3]/div/div[2]/ul/li[6]/a");
 		IECSubmissionForms.click();
-			
+		
 		
 		Thread.sleep(2000);
 		WebElement edit = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
@@ -302,7 +302,7 @@ public class TS_33 {
 		
 		WebElement IECSubmissionFrom = GWait.Wait_GetElementByXpath("html/body/div[3]/div/div[2]/ul/li[6]/a");
 		IECSubmissionFrom.click();
-		
+		Thread.sleep(2000);
 		WebElement editlink = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
 		editlink.click();
 		

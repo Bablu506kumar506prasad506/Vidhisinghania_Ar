@@ -18,7 +18,7 @@ public class Institute_update_in_Admin_TS_03  {
 	
 	@BeforeMethod
 	public void beforeMethod() throws Exception, Exception {
-		//GlobalMethods g = new GlobalMethods();
+		
 		
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
@@ -91,10 +91,10 @@ public class Institute_update_in_Admin_TS_03  {
 
 	}
 	
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
 
-	}
+	}*/
 
 }

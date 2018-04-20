@@ -277,7 +277,7 @@ public class TS_01C {
 			
 			WebElement Manage_Inst_admin = GWait.Wait_GetElementByXpath("//a[contains(text(),'Manage Institute Admins')]");
 			Manage_Inst_admin.click();
-			
+			Thread.sleep(1000);
 			Assert.assertEquals(pageheading.getText().trim(), adminpageheading);
 			
 			Assert.assertEquals(add_inst_admin.getText().trim(), adminaddheading);
@@ -369,9 +369,8 @@ public class TS_01C {
 		String admin_photo = r1.getCell(18, 63).getContents();
 		String admin_appointment_letter = r1.getCell(19, 63).getContents();
 		String admin_curriculum_vitae = r1.getCell(20, 63).getContents();
-		
-		
-
+	
+		WebElement Inst_Title = GWait.Wait_GetElementById("inst_name");
 		Inst_Title.sendKeys(Inst_tite);
 		Thread.sleep(2000);
 		Adds.sendKeys(Inst_address);
@@ -413,11 +412,13 @@ public class TS_01C {
 
 		
 
-		Thread.sleep(6000);
-
+		
+		WebElement iec_admin_institute =GWait.Wait_GetElementById("add_iec_admin_institute");
 		Select select = new Select(iec_admin_institute);
 		select.selectByVisibleText(Inst_tite);
 
+		
+		WebElement iec_admin_first_name =GWait.Wait_GetElementById("add_iec_admin_first_name");
 		iec_admin_first_name.sendKeys(admin_first_name);
 		Thread.sleep(1000);
 		iec_admin_last_name.sendKeys(admin_last_name);
@@ -541,7 +542,7 @@ public class TS_01C {
 		}
 		
 		//Assert.assertEquals(iec_admin_institute.getAttribute("value"), Inst_tite);
-		
+		Thread.sleep(2000);
 		Assert.assertEquals(iec_admin_first_name.getAttribute("value"), admin_first_name);
 		
 		Assert.assertEquals(iec_admin_last_name.getAttribute("value"), admin_last_name);

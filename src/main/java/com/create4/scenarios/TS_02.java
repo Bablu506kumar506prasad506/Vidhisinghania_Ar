@@ -1,9 +1,17 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.sql.Driver;
 import java.util.List;
+import java.util.regex.Pattern;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By.ByXPath;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -284,18 +292,32 @@ public class TS_02 {
 		WebElement createins = GWait.Wait_GetElementByXpath("//*[@id='accordion']/li[2]/div/a");
 		createins.click();
 
+	
+		WebElement Inst_Title = GWait.Wait_GetElementById("inst_name");
 		Inst_Title.sendKeys(Institute_Title_1);
+		
+		
+		WebElement Adds =GWait.Wait_GetElementById("inst_address");
 		Adds.sendKeys(Address);
+		
+		
+		WebElement DCGI_Reg_Numr =GWait.Wait_GetElementById("cgi_des");
 		DCGI_Reg_Numr.sendKeys(DCGI_Registration_Number);
 
+		
+		WebElement DCGI_Reg_Letter_Upload_attachmnt =GWait.Wait_GetElementById("cgi_attach");
 		DCGI_Reg_Letter_Upload_attachmnt.sendKeys(DCGI_Registration_Letter_Upload_attachment);
 
+		
+		WebElement Accredn =GWait.Wait_GetElementById("accrediation_desc");
 		Accredn.sendKeys(Accreditation);
 
 		
 		WebElement Accredn_Attachmnt = GWait.Wait_GetElementById("acc_attach");
 		Accredn_Attachmnt.sendKeys(Accrediation_Attachment);
 
+		
+		WebElement Ins_Logo =GWait.Wait_GetElementById("inst_logo");
 		Ins_Logo.sendKeys(Institute_Logo);
 		
 		WebElement Create_button = GWait.Wait_GetElementByXpath("//*[@id='createinstitute']/div[8]/div/input");
@@ -351,17 +373,25 @@ public class TS_02 {
 		
 		WebElement Inst_Title = GWait.Wait_GetElementById("inst_name");
 		Inst_Title.sendKeys(Institute_Title_1);
+		
+		WebElement Adds =GWait.Wait_GetElementById("inst_address");
 		Adds.sendKeys(Address);
+		
+		WebElement DCGI_Reg_Numr =GWait.Wait_GetElementById("cgi_des");
 		DCGI_Reg_Numr.sendKeys(DCGI_Registration_Number);
 		
+		WebElement DCGI_Reg_Letter_Upload_attachmnt =GWait.Wait_GetElementById("cgi_attach");
 		DCGI_Reg_Letter_Upload_attachmnt.sendKeys(DCGI_Registration_Letter_Upload_attachment);
 		
+		WebElement Accredn =GWait.Wait_GetElementById("accrediation_desc");
 		Accredn.sendKeys(Accreditation);
 		
 		WebElement Accredn_Attachmnt = GWait.Wait_GetElementById("acc_attach");
 		Accredn_Attachmnt.sendKeys(Accrediation_Attachment);
 		
+		WebElement Ins_Logo =GWait.Wait_GetElementById("inst_logo");
 		Ins_Logo.sendKeys(Institute_Logo);
+		
 		WebElement Create_button = GWait.Wait_GetElementByXpath("//*[@id='createinstitute']/div[8]/div/input");
 		Create_button.click();
 		

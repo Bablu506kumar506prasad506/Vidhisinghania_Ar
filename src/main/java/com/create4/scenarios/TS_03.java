@@ -1,6 +1,9 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -650,8 +653,7 @@ public class TS_03 {
 
 		WebElement Edit_Inst = GWait.Wait_GetElementByLinkText("Edit Institute");
 		Edit_Inst.click();
-
-		
+	
 
 		
 		WebElement Inst_Title = GWait.Wait_GetElementById("inst_name");

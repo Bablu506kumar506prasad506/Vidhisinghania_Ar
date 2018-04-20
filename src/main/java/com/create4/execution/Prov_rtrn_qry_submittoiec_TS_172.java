@@ -1,24 +1,22 @@
 package com.create4.execution;
 
 import java.io.FileInputStream;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterClass;
+
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-import com.create4.scenarios.TS_38;
+import com.create4.scenarios.TS_172;
 import com.global.methods.GlobalMethods;
 
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class View_Invitee_Requests_TS_38  {
+public class Prov_rtrn_qry_submittoiec_TS_172  {
 	@BeforeMethod
 	public void beforeMethod() throws Exception, Exception {
-		//GlobalMethods g = new GlobalMethods();
+		
 		
 		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
@@ -31,16 +29,35 @@ public class View_Invitee_Requests_TS_38  {
 	}
 
 
-	@Test
-	public void CRe4_1178_1180_1181_1182_1183_1184_1185() throws Exception {
 
-		TS_38 i1 = new TS_38();
-		i1.CRe4_1178_1180_1181_1182_1183_1184_1185();
+	@Test
+	public void CRe4_1968() throws Exception {
+
+		TS_172 i1 = new TS_172();
+		i1.CRe4_1968();
 
 	}
-	
-	
-	
+	@Test
+	public void CRe4_1974() throws Exception {
+
+		TS_172 i1 = new TS_172();
+		i1.CRe4_1974();
+
+	}
+	@Test
+	public void CRe4_1980() throws Exception {
+
+		TS_172 i1 = new TS_172();
+		i1.CRe4_1980();
+
+	}
+	@Test
+	public void CRe4_1986() throws Exception {
+
+		TS_172 i1 = new TS_172();
+		i1.CRe4_1986();
+
+	}
 
 	@AfterMethod
 	public void tearDown() throws Exception {

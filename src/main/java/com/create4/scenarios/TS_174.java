@@ -634,7 +634,7 @@ public class TS_174 {
 
 		WebElement add_annexure_publish = GWait.Wait_GetElementByLinkText("Publish");
 		add_annexure_publish.click();
-
+Thread.sleep(1000);
 		Assert.assertEquals(add_annexure_acknowledge.getText(), annexure_status);
 		System.out.println(add_annexure_acknowledge.getText());
 		

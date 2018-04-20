@@ -3,8 +3,6 @@ package com.create4.scenarios;
 import java.io.FileInputStream;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -12,7 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.global.methods.GlobalMethods;
 import com.global.methods.GlobalWait;
@@ -21,10 +18,11 @@ import jxl.Sheet;
 import jxl.Workbook;
 
 /*
- * Check for Submit new project form
+ * Check for Submission status for deviation submission for MS decisions
  */
-public class TS_146 {
-	public TS_146() {
+public class TS_178 extends TS_53{
+
+	public TS_178() {
 		PageFactory.initElements(GlobalMethods.driver, this);
 	}GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
 	Actions action = new Actions(GlobalMethods.driver);
@@ -142,7 +140,7 @@ public class TS_146 {
 	@FindBy(id = "submit_for_iec_review_confirm")
 	WebElement conflictsubmit;
 
-	@FindBy(xpath = "//span/a")
+	@FindBy(xpath = "//span[3]/a")
 	WebElement logoutt;
 
 	@FindBy(css = "img")
@@ -368,6 +366,9 @@ public class TS_146 {
 	@FindBy(xpath = "//div[2]/div/div/ul/li[2]/a/span")
 	WebElement continuation_dashboard;
 
+	@FindBy(xpath = "//div[2]/div/div/ul/li[7]/a/span")
+	WebElement deviation_dashboard;
+
 	@FindBy(xpath = "//li[3]/a/span")
 	WebElement query_reply_dashboard;
 
@@ -401,312 +402,151 @@ public class TS_146 {
 	@FindBy(linkText = "Project History")
 	WebElement PI_history;
 
-	// project summary fields elements
+	// Check submission status for Deviation submission when decision as 'Query
+	// Letter � Full Board'
+	public void CRe4_1392() throws Exception {
 
-	@FindBy(xpath = "//form[@id='projectsummaryedit']/div/div/div/label")
-	WebElement summary_project_type;
 
-	@FindBy(xpath = "//div[2]/div[4]")
-	WebElement document_preview_section_3;
-
-	@FindBy(xpath = "//form[@id='documentuploadprojectedit']/div/h3")
-	WebElement submit_documents_section_2;
-
-	@FindBy(css = "a.active-tab")
-	WebElement project_summary_section_1;
-
-	@FindBy(linkText = "Projects Documents/Project Review")
-	WebElement create_proj_document_submission;
-
-	@FindBy(linkText = "Submit Documents")
-	WebElement create_proj_submit_documents;
+		CRe4_1389();
+		
+		
+        GlobalMethods.PI_Login();
+		
+		WebElement Ongoingprojects1 = GWait.Wait_GetElementByXpath("//li[4]/a/span");
+		Ongoingprojects1.click();
 	
-	@FindBy(css = "h3")
-	WebElement project_summary_heading;
-	
-	@FindBy(xpath = "//form[@id='documentuploadproject']/div/h3/span")
-	WebElement project_submit_docs;
-	
-	@FindBy(xpath = "//div[@id='list_documents']/div/h3")
-	WebElement project_submit_docs_list;
-	
-	
-	//div[@id='list_documents']/div/h3
-	
+		WebElement approvedprojoverview = GWait.Wait_GetElementByXpath("//td[9]/a/span");
+		approvedprojoverview.click();
 
-	// Check for Submit new project link (Initial submissions)
-	public void CRe4_1989_1991_1992() throws Exception {
+		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
+		newdocuments.click();
+		
+		WebElement amend = GWait.Wait_GetElementByLinkText("Amendment");
+		amend.click();
+		
+		WebElement logouttD = GWait.Wait_GetElementByXpath("//span[3]/a");
+		logouttD.click();
+		WebElement logoD = GWait.Wait_GetElementByCSS("img");
+		logoD.click();
 
 
+	}
+
+	// Check submission status for Deviation submission when decision as 'Query
+	// Letter � Reviewers'
+	public void CRe4_1397() throws Exception {
+
+		CRe4_1394();
+		
+        GlobalMethods.PI_Login();
+		
+		WebElement Ongoingprojects1 = GWait.Wait_GetElementByXpath("//li[4]/a/span");
+		Ongoingprojects1.click();
+	
+		WebElement approvedprojoverview = GWait.Wait_GetElementByXpath("//td[9]/a/span");
+		approvedprojoverview.click();
+
+		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
+		newdocuments.click();
+		
+		WebElement amend = GWait.Wait_GetElementByLinkText("Amendment");
+		amend.click();
+		
+		WebElement logouttD = GWait.Wait_GetElementByXpath("//span[3]/a");
+		logouttD.click();
+		WebElement logoD = GWait.Wait_GetElementByCSS("img");
+		logoD.click();
+
+	}
+
+	// Check submission status for Deviation submission when decision as 'Query
+	// Letter � MS'
+	public void CRe4_1402() throws Exception {
+
+		CRe4_1399();
+		
+        GlobalMethods.PI_Login();
+		
+		WebElement Ongoingprojects1 = GWait.Wait_GetElementByXpath("//li[4]/a/span");
+		Ongoingprojects1.click();
+	
+		WebElement approvedprojoverview = GWait.Wait_GetElementByXpath("//td[9]/a/span");
+		approvedprojoverview.click();
+
+		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
+		newdocuments.click();
+		
+		WebElement amend = GWait.Wait_GetElementByLinkText("Amendment");
+		amend.click();
+		
+		WebElement logouttD = GWait.Wait_GetElementByXpath("//span[3]/a");
+		logouttD.click();
+		WebElement logoD = GWait.Wait_GetElementByCSS("img");
+		logoD.click();
+
+	}
+
+	// Check submission status for Deviation submission when decision as 'Noted
+	// Letter'
+	public void CRe4_1407() throws Exception {
+
+		CRe4_1404();
+		
+		  GlobalMethods.PI_Login();
+			
+			WebElement Ongoingprojects1 = GWait.Wait_GetElementByXpath("//li[4]/a/span");
+			Ongoingprojects1.click();
+		
+			WebElement approvedprojoverview = GWait.Wait_GetElementByXpath("//td[9]/a/span");
+			approvedprojoverview.click();
+
+			WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
+			newdocuments.click();
+			
+			WebElement amend = GWait.Wait_GetElementByLinkText("Amendment");
+			amend.click();
+			
+			WebElement logouttD = GWait.Wait_GetElementByXpath("//span[3]/a");
+			logouttD.click();
+			WebElement logoD = GWait.Wait_GetElementByCSS("img");
+			logoD.click();
+	}
+
+	// Check submission status for Deviation submission when decision as
+	// 'Suspension letter'
+	public void CRe4_1412() throws Exception {
+
+		CRe4_1409();
+		
 		GlobalMethods.PI_Login();
 
-		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		Workbook wb = Workbook.getWorkbook(fi);
-			
-		Sheet r1 = wb.getSheet("Projects");
-		Sheet r2 = wb.getSheet("Institute_Logins");
-		Sheet r3 = wb.getSheet("Data_Sheet");
+		WebElement query_reply_dashboard12 = GWait.Wait_GetElementByXpath("//li[3]/a/span");
+		query_reply_dashboard12.click();
 		
-		String heading = r1.getCell(2, 27).getContents();
-		String heading_second_tab = r1.getCell(3, 27).getContents();
-		String heading_third_tab = r1.getCell(4, 27).getContents();
-		String heading_four_tab = r1.getCell(5, 27).getContents();
-		String heading_five_tab = r1.getCell(6, 27).getContents();
-
-		// Project summary data
-
-		String Project_Type = r1.getCell(7, 27).getContents();
-		String Review_Type_expedited = r1.getCell(8, 27).getContents();
-		String Project_Full_Title = r1.getCell(9, 27).getContents();
-		String Project_Short_Title = r1.getCell(10, 27).getContents();
-		String Sponsor = r1.getCell(11, 27).getContents();
-
-		// Document upload data
+		WebElement query_tab_edit1 = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
+		query_tab_edit1.click();
 		
-		String Document_Title_in_list = r1.getCell(12, 27).getContents();
-		String Version_in_list = r1.getCell(13, 27).getContents();
-		String Document_Date_in_list = r1.getCell(14, 27).getContents();
-		String doc_upload = r1.getCell(15, 27).getContents();
-
+		WebElement dashboardlink = GWait.Wait_GetElementByLinkText("Dashboard");
+		dashboardlink.click();
 		
-		String doc_upload_heading = r1.getCell(16, 27).getContents();
-
-		// study team member
-		
-		String studyteammem_name = r3.getCell(2, 119).getContents();
-		String studyteammem_email = r3.getCell(3, 119).getContents();
-		String studyteammem_role = r3.getCell(4, 119).getContents();
-		String studyteammem_pwd = r3.getCell(5, 119).getContents();
-
-		String PI_Institute = r2.getCell(0, 2).getContents();
-
-		/*String project_summary_section_1_1 = project_summary_section_1.getText();
-		Assert.assertEquals(heading, project_summary_section_1_1);
-
-		System.out.println(project_summary_section_1_1);*/
-
-		/*String create_proj_document_submission_2_2 = create_proj_document_submission.getText();
-		Assert.assertEquals(heading_second_tab, create_proj_document_submission_2_2);
-
-		System.out.println(create_proj_document_submission_2_2);*/
-		
-
-		// pi submitting project
-
-		WebElement createproject = GWait.Wait_GetElementByLinkText("Submit New Project");
-		createproject.click();
-		
-		// checking all tabs
-		
-		System.out.println(heading);
-		System.out.println(heading_second_tab);
-		System.out.println(heading_third_tab);
-		System.out.println(heading_third_tab);
-		System.out.println(heading_four_tab);
-		System.out.println(heading_five_tab);
-		Thread.sleep(2000);
-		// checking project elements
-		Assert.assertEquals(create_proj_submit_documents.getText(), heading);
-		
-		Assert.assertEquals(create_proj_document_submission.getText(), heading_second_tab);
-			
-		
-		Assert.assertEquals(project_summary_heading.getText(), heading_third_tab);
-		
-		Assert.assertEquals(project_submit_docs.getText(), heading_four_tab);
-		
-		
-		
-
-		WebElement projtypdrop = GWait
-				.Wait_GetElementByXpath(".//*[@id='projectsummary']/div/div[1]/div[1]/div/div/button");
-		projtypdrop.click();
-		Thread.sleep(2000);
-
-		List<WebElement> elementsList11 = projtypvalue;
-		for (WebElement a11 : elementsList11) {
-			WebElement span = a11.findElement(By.tagName("span"));
-			if (span.getText().equalsIgnoreCase(Project_Type)) {
-				span.click();
-				break;
-			}
-		}
-
-		WebElement revtypdrop = GWait
-				.Wait_GetElementByXpath("//*[@id='projectsummary']/div/div[2]/div[1]/div/div/button");
-		revtypdrop.click();
-		Thread.sleep(2000);
-
-		List<WebElement> elementsList2 = revtypvalue;
-		for (WebElement a111 : elementsList2) {
-			WebElement span = a111.findElement(By.tagName("span"));
-			// System.out.println(Review_Type);
-			System.out.println(span.getText());
-			if (span.getText().equalsIgnoreCase(Review_Type_expedited)) {
-
-				span.click();
-				String text = span.getText();
-				System.out.println(text);
-				break;
-			}
-		}
-
-		WebElement Full_title = GWait.Wait_GetElementById("projecttitle");
-		Full_title.sendKeys(Project_Full_Title);
-
-		WebElement short_title = GWait.Wait_GetElementById("projectshorttitle");
-		short_title.sendKeys(Project_Short_Title);
-
-		WebElement sponsor = GWait.Wait_GetElementById("project_description");
-		sponsor.sendKeys(Sponsor);
-
-		WebElement save_button1 = GWait.Wait_GetElementByXpath("//*[@id='sumsave']");
-		save_button1.click();
-
-		// saving Submit documents
-
-		Thread.sleep(2000);
-		System.out.println(docvalue.size() - 1);
-
-		for (int i = 1; i <= docvalue.size() - 1; i++) {
-			Thread.sleep(10000);
-			docdrop.click();
-			String numberAsString = Integer.toString(i);
-			Thread.sleep(5000);
-			List<WebElement> elementsList3 = docvalue;
-			int j = 0;
-			for (WebElement a11 : elementsList3) {
-				WebElement span = a11.findElement(By.tagName("span"));
-				System.out.println(numberAsString);
-				System.out.println(span.getAttribute("data-original-index"));
-				if (i == j) {
-					Thread.sleep(2000);
-					span.click();
-
-					break;
-				}
-				j++;
-			}
-			if (i == j) {
-				WebElement doc_title =GWait.Wait_GetElementById("document_title");
-				doc_title.sendKeys(Document_Title_in_list);
-				
-				WebElement doc_version =GWait.Wait_GetElementById("version");
-				doc_version.sendKeys(Version_in_list);
-								
-				WebElement doc_date =GWait.Wait_GetElementById("document_date");
-				doc_date.sendKeys(Document_Date_in_list);
-
-				
-				WebElement upload_doc =GWait.Wait_GetElementById("proj_document");
-				upload_doc.sendKeys(doc_upload);
-
-				
-				WebElement save_button2 =GWait.Wait_GetElementById("savedoc");
-				save_button2.click();
-
-			}
-
-		}
-
-		Thread.sleep(2000);
-		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		Thread.sleep(10000);
-		
-		Assert.assertEquals(project_submit_docs_list.getText(), doc_upload_heading);
-		
-		
-
-		WebElement next_button = GWait.Wait_GetElementById("nextid");
-		next_button.click();
-		
-		Assert.assertEquals(project_summary_heading.getText(), heading_five_tab);
-		System.out.println(project_summary_heading.getText());
-		
-		WebElement next_button1 = GWait.Wait_GetElementById("nextid");
-		next_button1.click();
-
-		// assigning study team member
-		
-		WebElement PI_project_menu = GWait.Wait_GetElementByLinkText("My Projects");
-		PI_project_menu.click();
-
-		WebElement overview = GWait.Wait_GetElementByCSS("span.fa.fa-eye");
-		overview.click();
-		
-		WebElement studyteammember = GWait.Wait_GetElementByLinkText("Study Team Member");
-		studyteammember.click();
-		
-		
-		WebElement studyteammember_name = GWait.Wait_GetElementById("study_member_name");
-		studyteammember_name.sendKeys(studyteammem_name);
-		
-		
-		WebElement studyteammember_email = GWait.Wait_GetElementById("study_member_email");
-		studyteammember_email.sendKeys(studyteammem_email);
-
-		
-		WebElement studyteammember_role = GWait.Wait_GetElementByXpath("//*[@id='forward_submission']/div/div[1]/div[3]/div/select");
-		Select select = new Select(studyteammember_role);
-		select.selectByVisibleText(studyteammem_role);
-
-		
-		WebElement studyteammember_authorize = GWait.Wait_GetElementById("savedoc");
-		studyteammember_authorize.click();
+		WebElement Ongoingprojects1 = GWait.Wait_GetElementByXpath("//li[4]/a/span");
+		Ongoingprojects1.click();
 	
-		
+		WebElement approvedprojoverview = GWait.Wait_GetElementByXpath("//td[9]/a/span");
+		approvedprojoverview.click();
 
-		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
-		logoutt.click();
-
-		WebElement logo = GWait.Wait_GetElementByCSS("img");
-		logo.click();
+		WebElement newdocuments = GWait.Wait_GetElementByLinkText("Submit New Documents");
+		newdocuments.click();
 		
-		WebElement institute = GWait.Wait_GetElementByLinkText(PI_Institute);
-		institute.click();
+		WebElement amend = GWait.Wait_GetElementByLinkText("Amendment");
+		amend.click();
 		
-	
-		WebElement email =GWait.Wait_GetElementById("register_email");
-		email.sendKeys(studyteammem_email);
+		WebElement logouttD = GWait.Wait_GetElementByXpath("//span[3]/a");
+		logouttD.click();
+		WebElement logoD = GWait.Wait_GetElementByCSS("img");
+		logoD.click();
 		
-		
-		WebElement pwd =GWait.Wait_GetElementById("register_password");
-		
-		pwd.sendKeys(studyteammem_pwd);
-		
-		
-		WebElement rol =GWait.Wait_GetElementById("register_role");
-
-		Select dropdown = new Select(rol);
-		dropdown.selectByValue("2");
-		
-		
-		WebElement login =GWait.Wait_GetElementById("login_institute");
-		login.click();
-        Thread.sleep(2000);
-		WebElement PI_project_menu2 = GWait.Wait_GetElementByLinkText("My Projects");
-		PI_project_menu2.click();
-		
-	/*	WebElement i = GlobalMethods.driver.findElement(By.linkText("Submit New Project"));
-		if (i.isDisplayed()) {
-			overview.click();
-
-		} else {
-			System.out.println("Value is inactive");
-		}*/
-		
-		String XPath1 = "//ul[@id='accordion']/li[2]/div/a";
-		Boolean iselementpresent = GlobalMethods.driver.findElements(By.xpath(XPath1)).size()!= 0;
-		   if (iselementpresent == true)
-		   {
-		    System.out.print("Value is active");
-		   }
-		   else
-		   {
-		    System.out.print("Value is inactive");
-		   }
-		
-		
+			
 
 	}
 

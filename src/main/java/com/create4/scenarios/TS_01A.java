@@ -1,9 +1,15 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.sql.Driver;
+import java.util.List;
 import java.util.regex.Pattern;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -282,7 +288,7 @@ public class TS_01A {
 		
 		WebElement actionedit = GWait.Wait_GetElementByCSS("span.glyphicon.glyphicon-edit");
 		actionedit.click();
-		
+		Thread.sleep(2000);
 		Assert.assertEquals(InstitutionsHead.getText().trim(), editheading);
 		
 		WebElement Manage_Items1 = GWait.Wait_GetElementByXpath("html/body/div[3]/div/div[2]/ul/li[2]/a");

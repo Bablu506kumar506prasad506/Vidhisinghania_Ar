@@ -36,10 +36,10 @@ public class Prjctsub_as_stdyteammem_TS_156  {
 
 	}
 
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
 		
 
-	}
+	}*/
 	}

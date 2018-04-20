@@ -1,11 +1,21 @@
 package com.create4.scenarios;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
+import java.net.URL;
+import java.util.List;
+import java.util.jar.Attributes.Name;
+import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.global.methods.GlobalMethods;
@@ -178,9 +188,7 @@ public class TS_02A {
 		String inst=r.getCell(0, 2).getContents();
 		
 
-		/*WebElement Manage_Items = GWait.Wait_GetElementByXpath("html/body/div[3]/div/div[2]/ul/li[2]/a");
-		Manage_Items.click();*/
-		
+				
 		WebElement instclick = GWait.Wait_GetElementByLinkText(inst);
 		instclick.click();
 		
@@ -260,8 +268,7 @@ public class TS_02A {
 			
 			WebElement ethiconeeditcp = GWait.Wait_GetElementByXpath("//div[6]/div[2]/p");
 			String cpname = ethiconeeditcp.getText();
-			//String[] textfile = cpname.split("Email");
-			//System.out.println(textfile);
+			
 			
 			WebElement ethiconeeditms = GWait.Wait_GetElementByXpath("//div[7]/div[2]/p");
 			String msname = ethiconeeditms.getText();
@@ -301,65 +308,25 @@ public class TS_02A {
 			//cp comparision
 			
 			String textfile11 = homecp.substring(3);
-
+            System.out.println(textfile11);
 
 			String[] finalStr1 = textfile11.split(" ");
-			System.out.println(finalStr1);
+			//System.out.println(finalStr1);
 
 			System.out.println("Test1 "+finalStr1[0]);
 			System.out.println("Test2 "+finalStr1[1]);
-
-			String cphome = finalStr1[0] +" " + finalStr1[1];
+			System.out.println("Test3 "+finalStr1[2]);
 			
-			String  string1= cphome.substring(0, cphome.length() - 6);
+			String cphome = finalStr1[0] +" " + finalStr1[1]+" " +finalStr1[2];
+			
+			String  string1= cphome.substring(0, cphome.length() - 10);
 			System.out.println("21 " + string1);
 
+			System.out.println(cpname);
+			System.out.println(string1);
 			Assert.assertEquals(string1, cpname);
 
-			WebElement logo1 = GWait.Wait_GetElementByCSS("img");
-			logo1.click();
 			
-			//compare ethic member details on home page	
-			
-		GlobalMethods.Admin_Login();
-		
-		/*	WebElement Manage_IEC = GWait.Wait_GetElementByXpath("//a[contains(text(),'Manage IEC')]");
-		Manage_IEC.click();
-		
-		WebElement manage_iec_comm = GWait.Wait_GetElementByLinkText("Manage Ethics Committee");
-		manage_iec_comm.click();
-		
-		Thread.sleep(2000);
-		
-		WebElement remove1 = GWait.Wait_GetElementByXpath("//a[3]/span");
-		remove1.click();
-		
-		Thread.sleep(1000);
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is deactivated.");
-		
-		WebElement remove2 = GWait.Wait_GetElementByCSS("span.fa.fa-remove");
-		remove2.click();
-		
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is deactivated.");
-		
-		WebElement remove3 = GWait.Wait_GetElementByCSS("span.fa.fa-remove");
-		remove3.click();
-		
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is deactivated.");
-		
-		WebElement remove4 = GWait.Wait_GetElementByCSS("span.fa.fa-remove");
-		remove4.click();
-		
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is deactivated.");
-		
-		WebElement remove5 = GWait.Wait_GetElementByCSS("span.fa.fa-remove");
-		remove5.click();
-		
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is deactivated.");
-		
-		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
-		logoutt.click();
-		
 		//String accredit1 = "Recognized / Accredited by:"+"\n"+accred;
 		//Assert.assertEquals(homeaccr.getText().trim(), accredit1);
 		
@@ -394,42 +361,9 @@ public class TS_02A {
 		
 		
 		
-        GlobalMethods.Admin_Login();
-		
-		WebElement Manage_IEC11 = GWait.Wait_GetElementByXpath("//a[contains(text(),'Manage IEC')]");
-		Manage_IEC11.click();
-		
-		WebElement manage_iec_comm11 = GWait.Wait_GetElementByLinkText("Manage Ethics Committee");
-		manage_iec_comm11.click();
-		
-		
-		
-		
-		WebElement add1 = GWait.Wait_GetElementByCSS("span.fa.fa-check");
-		add1.click();
-		
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is activated.");
-		
-		WebElement add2 = GWait.Wait_GetElementByCSS("span.fa.fa-check");
-		add2.click();
-		Thread.sleep(1000);
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is activated.");
-		
-		WebElement add3 = GWait.Wait_GetElementByCSS("span.fa.fa-check");
-		add3.click();
-		Thread.sleep(1000);
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is activated.");
-		
-		WebElement add4 = GWait.Wait_GetElementByCSS("span.fa.fa-check");
-		add4.click();
-		Thread.sleep(1000);
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is activated.");
-		
-		WebElement add5 = GWait.Wait_GetElementByCSS("span.fa.fa-check");
-		add5.click();
-		Thread.sleep(1000);
-		//Assert.assertEquals(removeid.getText().trim(), "Ethics committee is activated.");*/
-
+   
+		   GlobalMethods.Admin_Login();
+		   
 		WebElement Manage_IEC2 = GWait.Wait_GetElementByXpath("//a[contains(text(),'Manage IEC')]");
 		Manage_IEC2.click();
 		
@@ -449,9 +383,9 @@ public class TS_02A {
 		WebElement VersionTextbox =GWait.Wait_GetElementById("sop_version");
 		VersionTextbox.sendKeys(VerTextboxExc1);
 		
-		
+		Thread.sleep(2000);
 		WebElement DateEffectFromTextbox =GWait.Wait_GetElementByXpath("//div[3]/form/div[3]/div/div/div/input");
-		DateEffectFromTextbox.sendKeys("28-02-2018");
+		DateEffectFromTextbox.sendKeys("16-04-2018");
 		Thread.sleep(2000);
 		
 		WebElement DescriptionTextbox =GWait.Wait_GetElementById("desc");
@@ -476,8 +410,7 @@ public class TS_02A {
 		WebElement logoutt11 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt11.click();
 		
-		/*WebElement logo2 = GWait.Wait_GetElementByCSS("img");
-		logo2.click();*/
+	
 		
 		WebElement soplinkhome = GWait.Wait_GetElementByLinkText("SOPs");
 		soplinkhome.click();
@@ -671,8 +604,13 @@ public class TS_02A {
 		
 		WebElement manage_add_announcement_notification_details =GWait.Wait_GetElementById("add_announcement_notification_details");
 		manage_add_announcement_notification_details.click();
-		}
 		
+		Thread.sleep(1000);
+		Assert.assertEquals(manage_acknowledge.getText().trim(), "Announcement added successfully.");
+		System.out.println(manage_acknowledge.getText());
+		
+		}
+	
 		
 		WebElement logoutt = GWait.Wait_GetElementByXpath("//span[3]/a");
 		logoutt.click();

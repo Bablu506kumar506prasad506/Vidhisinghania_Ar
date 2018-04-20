@@ -27,13 +27,13 @@ public class PI_profile_update_TS_136  {
 
 	}
 	
-	@Test
+/*	@Test
 	public void CRe4_684() throws Exception {
 
 		TS_136 SearchPI = new TS_136();
 
 		SearchPI.CRe4_684();
-	}
+	}*/
 
 	@Test
 	public void CRe4_686() throws Exception {
@@ -43,7 +43,7 @@ public class PI_profile_update_TS_136  {
 		SearchPI.CRe4_686();
 	}
 
-	@Test
+	/*@Test
 	public void CRe4_686_a() throws Exception {
 
 		TS_136 SearchPI = new TS_136();
@@ -65,12 +65,12 @@ public class PI_profile_update_TS_136  {
 		TS_136 SearchPI = new TS_136();
 
 		SearchPI.CRe4_697_698_699_700_701_702_703_704_705();
-	}
+	}*/
 	
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown() throws Exception {
 		GlobalMethods.driver.close();
 
-	}
+	}*/
 
 }

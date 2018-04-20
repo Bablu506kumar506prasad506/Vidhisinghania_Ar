@@ -38,7 +38,7 @@
 				</methods>
 			</class>
 
-			<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Admin_Creation_TS_01B">
 				<methods>
 
@@ -59,7 +59,7 @@
 				</methods>
 			</class>
 
-			<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Manage_Admin_View_Edit_Delete_TS_01C">
 				<methods>
 
@@ -69,7 +69,7 @@
 				</methods>
 			</class>
 
-			<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Home_Page_Details_TS_02">
 				<methods>
 
@@ -83,7 +83,7 @@
 				</methods>
 			</class>
 
-			<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Institute_Home_Page_Details_TS_02A">
 				<methods>
 
@@ -131,7 +131,7 @@
 				</methods>
 			</class>
 
-			<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Manage_Registration_Requests_TS_26">
 				<methods>
 
@@ -195,8 +195,7 @@
 
 				</methods>
 			</class>
-			
-				<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Studyteammem_add_TS_125">
 				<methods>
 
@@ -208,7 +207,7 @@
 
 				</methods>
 			</class>
-					<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Investigator_mail_TS_139">
 				<methods>
 					<include name="CRe4_138()"></include>
@@ -233,7 +232,7 @@
 
 				</methods>
 			</class>
-				<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.View_Invitee_Requests_TS_38">
 				<methods>
 
@@ -244,13 +243,13 @@
 			</class>
 
 
-				<!-- Change the data in this TS -->
-			<class name="com.create4.execution.Studyteam_prjctaccess_TS_126">
+<!-- Application having issue so will run script later -->
+		<!-- 	<class name="com.create4.execution.Studyteam_prjctaccess_TS_126">
 				<methods>
 
 					<include name="CRe4_581_82_83_84_85_87_89_90"></include>
 				</methods>
-			</class>
+			</class> -->
 
 			<class name="com.create4.execution.ApplyPI_4studyteam_TS_127">
 				<methods>
@@ -260,7 +259,7 @@
 
 				</methods>
 			</class>
-					<!-- Change the data in this TS -->
+
 			<class name="com.create4.execution.Institute_update_in_Admin_TS_03">
 				<methods>
 

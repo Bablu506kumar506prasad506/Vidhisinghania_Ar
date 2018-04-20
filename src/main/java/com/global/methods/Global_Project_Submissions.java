@@ -415,7 +415,8 @@ public class Global_Project_Submissions {
 	@FindBy(xpath = "//div[2]/div/div/ul/li[6]/a/span")
 	WebElement amend_dashboard;
 	
-	public int querydoccount=0;
+
+	public static int querydoccount=0;
 	public void PI_SubmitProject_IECAdmin() throws Exception
 	{
 
@@ -495,8 +496,11 @@ public class Global_Project_Submissions {
 				
 				//Thread.sleep(2000);
 				System.out.println(docvalue.size() - 1);
-				int count=querydoccount = docvalue.size();
+				
 				for (int i = 1; i <= docvalue.size() - 1; i++) {
+querydoccount = docvalue.size();
+					
+					System.out.println(querydoccount = docvalue.size());
 					System.out.println("Hello");
 					WebElement docdrop = GWait.Wait_GetElementByXpath("//*[@id='document_type']/div/button");
 					Thread.sleep(2000);

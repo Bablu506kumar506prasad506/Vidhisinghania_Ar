@@ -3,8 +3,6 @@ package com.create4.scenarios;
 import java.io.FileInputStream;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -17,36 +15,54 @@ import com.global.methods.Dashboard_Links;
 import com.global.methods.GlobalMethods;
 import com.global.methods.GlobalWait;
 import com.global.methods.Global_Project_Submissions;
+import com.google.common.annotations.GwtCompatible;
 
 import jxl.Sheet;
 import jxl.Workbook;
 
-/*
- * Check for  Edit feature for Provisional/Suspension/Query/Resubmission/Returned letter by Admin
- * Check for PI reply for Provisional/Suspension/Query/Resubmission/Returned letter through edit option in PI login.
- */
+//Check for Provisional/Suspension/Query/Resubmission/Returned�letter reply submission to IEC with blank form
 
-public class TS_167 extends TS_51 {
+public class TS_170 extends TS_51 {
 
-	public TS_167() {
+	public TS_170() {
 		PageFactory.initElements(GlobalMethods.driver, this);
-	}GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
-	Actions action = new Actions(GlobalMethods.driver);
-	// PI submit new project page elements
+	}
 
-	@FindBy(linkText = "Submit New Project")
-	WebElement createproject;
-	
+	GlobalWait GWait = new GlobalWait(GlobalMethods.driver);
+	Actions action = new Actions(GlobalMethods.driver);
+
+	@FindBy(id = "nextidedit")
+	WebElement next_edit_button;
+
+	@FindBy(xpath = "//div[2]/div/div/ul/li[4]/a/span")
+	WebElement query_reply_admin_dashboard;
+
+	@FindBy(xpath = "//div[2]/div/div/ul/li[6]/a/span")
+	WebElement amend_dashboard;
+
+	@FindBy(xpath = "//*[@id='documentuploadprojectresubmission']/div/div[1]/div[1]/div/div[1]/button")
+	public WebElement docdrop_resub;
+	@FindBy(xpath = "//*[@id='documentuploadprojectresubmission']/div/div[1]/div[1]/div/div[1]/div/ul/li")
+	public static List<WebElement> docvalue_resub;
+
+	@FindBy(xpath = "//*[@id='documentuploadprojectprovisional']/div/div[1]/div[1]/div/div[1]/button")
+	public WebElement docdrop_prov;
+	@FindBy(xpath = "//*[@id='documentuploadprojectprovisional']/div/div[1]/div[1]/div/div[1]/div/ul/li")
+	public static List<WebElement> docvalue_prov;
+
+	@FindBy(xpath = "//*[@id='document_types_edit']/div/button")
+	public WebElement docdrop_edit;
+	@FindBy(xpath = "//*[@id='document_types_edit']/div/div/ul/li")
+	public static List<WebElement> docvalue_edit;
+
 	@FindBy(xpath = "//*[@id='documentuploadprojectsuspension']/div/div[1]/div[1]/div/div[1]/button")
 	public WebElement docdrop_sus;
 	@FindBy(xpath = "//*[@id='documentuploadprojectsuspension']/div/div[1]/div[1]/div/div[1]/div/ul/li")
 	public static List<WebElement> docvalue_sus;
-	
-	@FindBy(xpath = ".//*[@id='documentuploadprojectresubmission']/div/div[1]/div[1]/div/div[1]/button")
-	public WebElement docdrop2_res;
-	@FindBy(xpath = ".//*[@id='documentuploadprojectresubmission']/div/div[1]/div[1]/div/div[1]/div/ul/li")
-	public static List<WebElement> docvalue2_res;
-	
+
+	@FindBy(linkText = "Submit New Project")
+	WebElement createproject;
+
 	@FindBy(linkText = "My Projects")
 	WebElement PI_project_menu;
 
@@ -157,7 +173,6 @@ public class TS_167 extends TS_51 {
 
 	@FindBy(xpath = "//span[3]/a")
 	WebElement logoutt;
-
 	@FindBy(css = "img")
 	WebElement logo;
 
@@ -348,11 +363,6 @@ public class TS_167 extends TS_51 {
 	public WebElement docdrop2;
 	@FindBy(xpath = "//*[@id='respondqueryupload']/div/div[1]/div[1]/div/div/div/ul/li")
 	public static List<WebElement> docvalue2;
-	
-	@FindBy(xpath = "//*[@id='document_types_edit']/div/button")
-	public WebElement docdrop_edit;
-	@FindBy(xpath = "//*[@id='document_types_edit']/div/div/ul/li")
-	public static List<WebElement> docvalue_edit;
 
 	// Admin document type add elements
 
@@ -422,40 +432,6 @@ public class TS_167 extends TS_51 {
 	@FindBy(linkText = "Project History")
 	WebElement PI_history;
 
-	// sae initial uploads
-
-	@FindBy(xpath = "//*[@id='saedetails']/div[1]/div[2]/div[1]/div/div/button")
-	public WebElement sae_site_drop;
-	@FindBy(xpath = "//*[@id='saedetails']/div[1]/div[2]/div[1]/div/div/div/ul/li")
-	public static List<WebElement> sae_site_value;
-
-	@FindBy(xpath = "//*[@id='report_types_sel']/div/div/button")
-	public WebElement sae_report_doc;
-	@FindBy(xpath = "//*[@id='report_types_sel']/div/div/div/ul/li")
-	public static List<WebElement> sae_report_value;
-
-	@FindBy(xpath = "//*[@id='document_type_sae']/div/button")
-	public WebElement sae_docdrop;
-	@FindBy(xpath = "//*[@id='document_type_sae']/div/div/ul/li")
-	public static List<WebElement> sae_docvalue;
-
-	// SAE Elements
-
-	@FindBy(id = "patient_initial")
-	WebElement Sae_patient_initial;
-
-	@FindBy(id = "sae_number")
-	WebElement Sae_sae_number;
-
-	@FindBy(id = "followup_number")
-	WebElement sae_followup_number;
-
-	@FindBy(linkText = "followup_date")
-	WebElement sae_followup_date;
-
-	@FindBy(xpath = "//li[8]/a/span")
-	WebElement sae_dash;
-
 	// admin return to pi form elements
 
 	@FindBy(id = "return_modal_btn")
@@ -471,324 +447,47 @@ public class TS_167 extends TS_51 {
 
 	@FindBy(xpath = "//li[5]/a/span")
 	WebElement Submissions_returned_dash;
-	
+
 	@FindBy(linkText = "Resubmission")
 	WebElement resubmission_edit;
 
-	
-	
-	// Check Edit feature & PI reply for Provisional letter
-	public void CRe4_1954() throws Exception {
+	// Check for suspension letter reply submission to IEC with blank form
+	public void CRe4_1961() throws Exception {
 
 
-
-
-		
-		Global_Project_Submissions gp=new Global_Project_Submissions();
-	    FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+		Global_Project_Submissions gp = new Global_Project_Submissions();
+		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
 		Sheet r1 = wb.getSheet("Project Submissions");
-		
-		String Document_Title_in_list = r1.getCell(2,503).getContents();
-		String Version_in_list = r1.getCell(3,503).getContents();
-		String Document_Date_in_list = r1.getCell(4,503).getContents();
-		String doc_upload = r1.getCell(5,503).getContents();
-		String Query_Cmnts_Continuation = r1.getCell(6,503).getContents();
-		
 
-		CRe4_1231();
-				
-		
-		GlobalMethods.PI_Login();
+		String Document_Title_in_list = r1.getCell(2, 513).getContents();
+		String Version_in_list = r1.getCell(3, 513).getContents();
+		String Document_Date_in_list = r1.getCell(4, 513).getContents();
+		String doc_upload = r1.getCell(5, 513).getContents();
 
-		WebElement query_reply_dashboard = GWait.Wait_GetElementByXpath("//li[3]/a/span");
-		query_reply_dashboard.click();
+		TS_53 obj = new TS_53();
 
-		WebElement query_tab_edit = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
-		query_tab_edit.click();
-		
-		WebElement query_comments = GWait.Wait_GetElementById("query_comments");
-		query_comments.sendKeys(Query_Cmnts_Continuation);
-		
-		WebElement save_button3 = GWait.Wait_GetElementById("sumsave");
-		save_button3.click();
-		
-		
-		System.out.println(docvalue2.size()-1);
-		System.out.println("ALFA 1A " + Global_Project_Submissions.querydoccount);
-		for (int i =Global_Project_Submissions.querydoccount; i<=docvalue2.size()-1; i++)
-		{
-			System.out.println("ALFA 11A " + Global_Project_Submissions.querydoccount);
-			//WebElement docdrop2 = GWait.Wait_GetElementByXpath("//form[@id='respondqueryupload']/div/div/div/div/div/button");
-			Thread.sleep(2000);
-			docdrop2.click();
-			String numberAsString = Integer.toString(i);
-			List<WebElement> elementsList3 = docvalue2;
-			int j= 0;
-			for (WebElement a11 : elementsList3) {
-				WebElement span = a11.findElement(By.tagName("span"));
-				System.out.println(numberAsString);
-				System.out.println(span.getAttribute("data-original-index"));
-				if (i==j) {
-					Thread.sleep(2000);
-					span.click();
-					
-					break;
-				}
-				j++;
-			}
-			if (i==j) {
-				
-				WebElement doc_title = GWait.Wait_GetElementById("document_title");
-				doc_title.sendKeys(Document_Title_in_list);
-				doc_version.sendKeys(Version_in_list);
-				doc_date.sendKeys(Document_Date_in_list);
-				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
-				upload_doc.sendKeys(doc_upload);
-				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
-				save_button2.click();
-
-				
-			}
-			
-		}
-				
-		Thread.sleep(2000);
-		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		 Thread.sleep(10000);
-		 GWait.LoadGif();
-		WebElement query_submit_button = GWait.Wait_GetElementById("querysubmit");
-		query_submit_button.click();
-		
-		WebElement logouttA = GWait.Wait_GetElementByXpath("//span[3]/a");
-		logouttA.click();
-		WebElement logoA = GWait.Wait_GetElementByCSS("img");
-		logoA.click();
-		
-
-	}
-
-	// Check Edit feature & PI reply for Suspension letter
-	public void CRe4_1955() throws Exception {
-
-
-		
-		
-		Global_Project_Submissions gp=new Global_Project_Submissions();
-	    FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		Workbook wb = Workbook.getWorkbook(fi);
-		Sheet r1 = wb.getSheet("Project Submissions");
-		
-		String Document_Title_in_list = r1.getCell(2,505).getContents();
-		String Version_in_list = r1.getCell(3,505).getContents();
-		String Document_Date_in_list = r1.getCell(4,505).getContents();
-		String doc_upload = r1.getCell(5,505).getContents();
-
-     TS_53 obj = new TS_53();
-
-		
 		obj.CRe4_1409();
-		
-	
 
+		
+		
 		GlobalMethods.PI_Login();
 
 		WebElement query_reply_dashboard12 = GWait.Wait_GetElementByXpath("//li[3]/a/span");
 		query_reply_dashboard12.click();
-		
+
 		WebElement query_tab_edit1 = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
 		query_tab_edit1.click();
 		Thread.sleep(2000);
-		System.out.println(docvalue_sus.size()-1);
-		
-		for (int i = Global_Project_Submissions.querydoccount; i<=docvalue_sus.size()-1; i++)
-		{
-			Thread.sleep(6000);
+		Thread.sleep(2000);
+		System.out.println(docvalue_sus.size() - 1);
+
+		for (int i = Global_Project_Submissions.querydoccount; i <= docvalue_sus.size() - 1; i++) {
+			Thread.sleep(3000);
 			docdrop_sus.click();
 			String numberAsString = Integer.toString(i);
 			Thread.sleep(5000);
 			List<WebElement> elementsList3 = docvalue_sus;
-			int j= 0;
-			for (WebElement a11 : elementsList3) {
-				WebElement span = a11.findElement(By.tagName("span"));
-				System.out.println(numberAsString);
-				System.out.println(span.getAttribute("data-original-index"));
-				if (i==j) {
-					Thread.sleep(2000);
-					span.click();
-					
-					break;
-				}
-				j++;
-			}
-			if (i==j) {
-				
-				WebElement doc_title = GWait.Wait_GetElementById("document_title");
-				doc_title.sendKeys(Document_Title_in_list);
-
-				WebElement doc_version = GWait.Wait_GetElementById("version");
-				doc_version.sendKeys(Version_in_list);
-
-				WebElement doc_date = GWait.Wait_GetElementById("document_date");
-				doc_date.sendKeys(Document_Date_in_list);
-
-				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
-				upload_doc.sendKeys(doc_upload);
-
-				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
-				save_button2.click();
-				
-			}
-			
-		}
-				
-		Thread.sleep(2000);
-		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-		Thread.sleep(10000);
-		
-		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
-		submit_to_IEC.click();
-		Thread.sleep(6000);
-		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
-		logoutt.click();
-
-		WebElement logo = GWait.Wait_GetElementByCSS("img");
-		logo.click();
-
-	}
-	
-
-	// Check Edit feature & PI reply for query letter
-	public void CRe4_1956() throws Exception {
-
-
-		
-		Global_Project_Submissions gp=new Global_Project_Submissions();
-	    FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		Workbook wb = Workbook.getWorkbook(fi);
-		Sheet r1 = wb.getSheet("Project Submissions");
-		
-		String Document_Title_in_list = r1.getCell(2,507).getContents();
-		String Version_in_list = r1.getCell(3,507).getContents();
-		String Document_Date_in_list = r1.getCell(4,507).getContents();
-		String doc_upload = r1.getCell(5,507).getContents();
-		String Query_Cmnts_Continuation = r1.getCell(6,507).getContents();
-
-		
-		 CRe4_1241();
-		
-		 GlobalMethods.PI_Login();
-
-			WebElement query_reply_dashboard = GWait.Wait_GetElementByXpath("//li[3]/a/span");
-			query_reply_dashboard.click();
-
-			WebElement overview = GWait.Wait_GetElementByCSS("span.fa.fa-eye");
-			overview.click();
-
-			WebElement query_tab = GWait.Wait_GetElementByXpath("//div[3]/ul/li[4]/a");
-			query_tab.click();
-
-			WebElement query_tab_edit = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
-			query_tab_edit.click();
-			
-			WebElement query_comments = GWait.Wait_GetElementById("query_comments");
-			query_comments.sendKeys(Query_Cmnts_Continuation);
-			
-			WebElement save_button3 = GWait.Wait_GetElementById("sumsave");
-			save_button3.click();
-			
-			System.out.println(docvalue2.size()-1);
-			System.out.println("ALFA 1A " + Global_Project_Submissions.querydoccount);
-			for (int i =Global_Project_Submissions.querydoccount; i<=docvalue2.size()-1; i++)
-			{
-				Thread.sleep(2000);
-				System.out.println("ALFA 11A " + Global_Project_Submissions.querydoccount);
-				WebElement docdrop2 = GWait.Wait_GetElementByXpath("//form[@id='respondqueryupload']/div/div/div/div/div/button");
-				docdrop2.click();
-				String numberAsString = Integer.toString(i);
-				List<WebElement> elementsList3 = docvalue2;
-				int j= 0;
-				for (WebElement a11 : elementsList3) {
-					WebElement span = a11.findElement(By.tagName("span"));
-					System.out.println(numberAsString);
-					System.out.println(span.getAttribute("data-original-index"));
-					if (i==j) {
-						Thread.sleep(2000);
-						span.click();
-						
-						break;
-					}
-					j++;
-				}
-				if (i==j) {
-					
-					WebElement doc_title = GWait.Wait_GetElementById("document_title");
-					doc_title.sendKeys(Document_Title_in_list);
-					doc_version.sendKeys(Version_in_list);
-					doc_date.sendKeys(Document_Date_in_list);
-					WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
-					upload_doc.sendKeys(doc_upload);
-					WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
-					save_button2.click();
-
-					
-				}break;
-				
-			}
-					
-			Thread.sleep(2000);
-			((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
-			 Thread.sleep(10000);
-			WebElement query_submit_button = GWait.Wait_GetElementById("querysubmit");
-			query_submit_button.click();
-			GWait.LoadGif();
-			WebElement logouttA = GWait.Wait_GetElementByXpath("//span[3]/a");
-			logouttA.click();
-			WebElement logoA = GWait.Wait_GetElementByCSS("img");
-			logoA.click();
-			
-
-		}
-
-	// Check Edit feature & PI reply for resubmission letter
-	public void CRe4_1957() throws Exception {
-
-
-
-		
-		Global_Project_Submissions gp=new Global_Project_Submissions();
-	    FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
-		Workbook wb = Workbook.getWorkbook(fi);
-		Sheet r1 = wb.getSheet("Project Submissions");
-		
-		String Document_Title_in_list = r1.getCell(2,509).getContents();
-		String Version_in_list = r1.getCell(3,509).getContents();
-		String Document_Date_in_list = r1.getCell(4,509).getContents();
-		String doc_upload = r1.getCell(5,509).getContents();
-		String Query_Cmnts_Continuation = r1.getCell(6,509).getContents();
-
-		CRe4_1236();
-		
-	
-		GlobalMethods.PI_Login();
-
-		WebElement PI_project_menu = GWait.Wait_GetElementByLinkText("My Projects");
-		PI_project_menu.click();
-
-		WebElement resubmission_edit = GWait.Wait_GetElementByLinkText("Resubmission");
-		resubmission_edit.click();
-		
-		Thread.sleep(2000);
-		System.out.println(docvalue2_res.size() - 1);
-		
-
-		for (int i = 1; i <= docvalue2_res.size() - 1; i++) {
-			Thread.sleep(10000);
-			//WebElement docdrop = GWait.Wait_GetElementByXpath("html/body/div[5]/div[1]/div[3]/div[4]/div[2]/form/div/div[1]/div[1]/div/div/div/button");
-			docdrop2_res.click();
-			String numberAsString = Integer.toString(i);
-			Thread.sleep(5000);
-			List<WebElement> elementsList3 = docvalue2_res;
 			int j = 0;
 			for (WebElement a11 : elementsList3) {
 				WebElement span = a11.findElement(By.tagName("span"));
@@ -803,22 +502,36 @@ public class TS_167 extends TS_51 {
 				j++;
 			}
 			if (i == j) {
+				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
+				save_button2.click();
+				GlobalMethods.alertaccept();
+				Thread.sleep(8000);
+
 				WebElement doc_title = GWait.Wait_GetElementById("document_title");
 				doc_title.sendKeys(Document_Title_in_list);
 
-				WebElement doc_version = GWait.Wait_GetElementById("version");
-				doc_version.sendKeys(Version_in_list);
-
+				WebElement save_button21 = GWait.Wait_GetElementById("savedoc");
+				save_button21.click();
+				GlobalMethods.alertaccept();
+				Thread.sleep(8000);
+				
 				WebElement doc_date = GWait.Wait_GetElementById("document_date");
 				doc_date.sendKeys(Document_Date_in_list);
 
+				WebElement doc_version = GWait.Wait_GetElementById("version");
+				doc_version.sendKeys(Version_in_list);
+				WebElement save_button22 = GWait.Wait_GetElementById("savedoc");
+				save_button22.click();
+				GlobalMethods.alertaccept();
+				Thread.sleep(8000);
+
 				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
 				upload_doc.sendKeys(doc_upload);
+				Thread.sleep(2000);
+				WebElement save_button23 = GWait.Wait_GetElementById("savedoc");
+				save_button23.click();
 
-				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
-				save_button2.click();
-
-			}break;
+			}
 
 		}
 
@@ -826,51 +539,374 @@ public class TS_167 extends TS_51 {
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
 		Thread.sleep(10000);
 
-		WebElement next_button = GWait.Wait_GetElementById("nextidedit");
-		next_button.click();
-		Thread.sleep(10000);
 		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
 		submit_to_IEC.click();
-
-		
-		GWait.LoadGif();
 		Thread.sleep(6000);
-		WebElement logouttA = GWait.Wait_GetElementByXpath("//span[3]/a");
-		logouttA.click();
+		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
+		logoutt.click();
 
 		WebElement logo = GWait.Wait_GetElementByCSS("img");
 		logo.click();
 
+	}
+
+	// Check for query letter reply submission to IEC with blank form
+	public void CRe4_1967() throws Exception {
+
+
+		Global_Project_Submissions g5 = new Global_Project_Submissions();
+		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+		Workbook wb = Workbook.getWorkbook(fi);
+		Sheet r1 = wb.getSheet("Project Submissions");
+
+		String Document_Title_in_list = r1.getCell(2, 515).getContents();
+		String Version_in_list = r1.getCell(3, 515).getContents();
+		String Document_Date_in_list = r1.getCell(4, 515).getContents();
+		String doc_upload = r1.getCell(5, 515).getContents();
+		String Query_Cmnts_Continuation = r1.getCell(6, 515).getContents();
+
+		CRe4_1241();
+		
+		
+		//g5.PI_SubmitProject_IECAdmin();
+		
+		GlobalMethods.PI_Login();
+
+		WebElement query_reply_dashboard = GWait.Wait_GetElementByXpath("//li[3]/a/span");
+		query_reply_dashboard.click();
+
+		WebElement overview = GWait.Wait_GetElementByCSS("span.fa.fa-eye");
+		overview.click();
+
+		WebElement query_tab = GWait.Wait_GetElementByXpath("//div[3]/ul/li[4]/a");
+		query_tab.click();
+
+		WebElement query_tab_edit = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
+		query_tab_edit.click();
+
+		WebElement save_button3 = GWait.Wait_GetElementById("sumsave");
+		save_button3.click();
+
+		GlobalMethods.alertaccept();
+
+		WebElement query_comments = GWait.Wait_GetElementById("query_comments");
+		query_comments.sendKeys(Query_Cmnts_Continuation);
+
+		Thread.sleep(2000);
+		System.out.println(docvalue2.size() - 1);
+        System.out.println("AA " + Global_Project_Submissions.querydoccount);
+		for (int i = Global_Project_Submissions.querydoccount; i <= docvalue2.size() - 1; i++) {
+			Thread.sleep(6000);
+			System.out.println("AA 1" + Global_Project_Submissions.querydoccount);
+			docdrop2.click();
+			String numberAsString = Integer.toString(i);
+			Thread.sleep(5000);
+			List<WebElement> elementsList3 = docvalue2;
+			int j = 0;
+			for (WebElement a11 : elementsList3) {
+				WebElement span = a11.findElement(By.tagName("span"));
+				System.out.println(numberAsString);
+				System.out.println(span.getAttribute("data-original-index"));
+				if (i == j) {
+					Thread.sleep(2000);
+					span.click();
+
+					break;
+				}
+				j++;
+			}
+			if (i == j) {
+				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
+				save_button2.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+
+				WebElement doc_title = GWait.Wait_GetElementById("document_title");
+				doc_title.sendKeys(Document_Title_in_list);
+
+				WebElement save_button24 = GWait.Wait_GetElementById("savedoc");
+				save_button24.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+				WebElement doc_date = GWait.Wait_GetElementById("document_date");
+				doc_date.sendKeys(Document_Date_in_list);
+				Thread.sleep(2000);
+				WebElement doc_version = GWait.Wait_GetElementById("version");
+				doc_version.sendKeys(Version_in_list);
+				Thread.sleep(2000);
+
+				WebElement save_button22 = GWait.Wait_GetElementById("savedoc");
+				save_button22.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
+				upload_doc.sendKeys(doc_upload);
+				WebElement save_button23 = GWait.Wait_GetElementById("savedoc");
+				save_button23.click();
+
+			}
+
+		}
+
+		Thread.sleep(2000);
+		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
+		Thread.sleep(10000);
+
+		WebElement submit_to_IEC = GWait.Wait_GetElementById("querysubmit");
+		submit_to_IEC.click();
+		Thread.sleep(6000);
+		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
+		logoutt.click();
+
+		WebElement logo = GWait.Wait_GetElementByCSS("img");
+		logo.click();
 
 	}
 
-	// Check Edit feature & PI reply for returned
-	public void CRe4_1958() throws Exception {
+	// Check for resubmission letter reply submission to IEC with blank form
+	public void CRe4_1973() throws Exception {
 
 
+
+		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+		Workbook wb = Workbook.getWorkbook(fi);
+		Sheet r1 = wb.getSheet("Project Submissions");
+
+		String Document_Title_in_list = r1.getCell(2, 517).getContents();
+		String Version_in_list = r1.getCell(3, 517).getContents();
+		String Document_Date_in_list = r1.getCell(4, 517).getContents();
+		String doc_upload = r1.getCell(5, 517).getContents();
+		String Query_Cmnts_Continuation = r1.getCell(6, 517).getContents();
+
+		CRe4_1236();
+
+		GlobalMethods.PI_Login();
+
+		WebElement PI_project_menu = GWait.Wait_GetElementByLinkText("My Projects");
+		PI_project_menu.click();
+
+		WebElement resubmission_edit = GWait.Wait_GetElementByLinkText("Resubmission");
+		resubmission_edit.click();
+
+		Thread.sleep(2000);
+		System.out.println(docvalue_resub.size() - 1);
+
+		for (int i = 1; i <= docvalue_resub.size() - 1; i++) {
+			Thread.sleep(6000);
+			
+			WebElement docdrop_resub = GWait.Wait_GetElementByXpath("//*[@id='documentuploadprojectresubmission']/div/div[1]/div[1]/div/div[1]/button");
+			docdrop_resub.click();
+			String numberAsString = Integer.toString(i);
+			Thread.sleep(5000);
+			List<WebElement> elementsList3 = docvalue_resub;
+			int j = 0;
+			for (WebElement a11 : elementsList3) {
+				WebElement span = a11.findElement(By.tagName("span"));
+				System.out.println(numberAsString);
+				System.out.println(span.getAttribute("data-original-index"));
+				if (i == j) {
+					Thread.sleep(2000);
+					span.click();
+
+					break;
+				}
+				j++;
+			}
+			if (i == j) {
+				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
+				save_button2.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+
+				WebElement doc_title = GWait.Wait_GetElementById("document_title");
+				doc_title.sendKeys(Document_Title_in_list);
+
+				WebElement save_button24 = GWait.Wait_GetElementById("savedoc");
+				save_button24.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+				WebElement doc_date = GWait.Wait_GetElementById("document_date");
+				doc_date.sendKeys(Document_Date_in_list);
+				Thread.sleep(2000);
+				WebElement doc_version = GWait.Wait_GetElementById("version");
+				doc_version.sendKeys(Version_in_list);
+				Thread.sleep(2000);
+
+				WebElement save_button22 = GWait.Wait_GetElementById("savedoc");
+				save_button22.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
+				upload_doc.sendKeys(doc_upload);
+				WebElement save_button23 = GWait.Wait_GetElementById("savedoc");
+				save_button23.click();
+
+			}
+
+		}
+
+		Thread.sleep(2000);
+		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
+		Thread.sleep(10000);
+
+		WebElement next_edit_button = GWait.Wait_GetElementById("nextidedit");
+		next_edit_button.click();
+
+		WebElement submit_to_IEC = GWait.Wait_GetElementById("submitid");
+		submit_to_IEC.click();
+
+		
+		Thread.sleep(6000);
+		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
+		logoutt.click();
+
+		WebElement logo = GWait.Wait_GetElementByCSS("img");
+		logo.click();
+
+	}
+
+	// Check for Provisional permission letter reply submission to IEC with
+	// blank form
+	public void CRe4_1979() throws Exception {
+
+
+		Global_Project_Submissions gp = new Global_Project_Submissions();
+		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+		Workbook wb = Workbook.getWorkbook(fi);
+		Sheet r1 = wb.getSheet("Project Submissions");
+
+		String Document_Title_in_list = r1.getCell(2, 503).getContents();
+		String Version_in_list = r1.getCell(3, 503).getContents();
+		String Document_Date_in_list = r1.getCell(4, 503).getContents();
+		String doc_upload = r1.getCell(5, 503).getContents();
+		String Query_Cmnts_Continuation = r1.getCell(6, 503).getContents();
+
+		CRe4_1231();
+
+		GlobalMethods.PI_Login();
+
+		WebElement query_reply_dashboard = GWait.Wait_GetElementByXpath("//li[3]/a/span");
+		query_reply_dashboard.click();
+
+		WebElement query_tab_edit = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
+		query_tab_edit.click();
+
+		WebElement save_button3 = GWait.Wait_GetElementById("sumsave");
+		save_button3.click();
+
+		GlobalMethods.alertaccept();
+
+		WebElement query_comments = GWait.Wait_GetElementById("query_comments");
+		query_comments.sendKeys(Query_Cmnts_Continuation);
+
+		Thread.sleep(2000);
+		System.out.println(docvalue2.size() - 1);
+
+		for (int i = Global_Project_Submissions.querydoccount; i <= docvalue2.size() - 1; i++) {
+			Thread.sleep(6000);
+			docdrop2.click();
+			String numberAsString = Integer.toString(i);
+			Thread.sleep(5000);
+			List<WebElement> elementsList3 = docvalue2;
+			int j = 0;
+			for (WebElement a11 : elementsList3) {
+				WebElement span = a11.findElement(By.tagName("span"));
+				System.out.println(numberAsString);
+				System.out.println(span.getAttribute("data-original-index"));
+				if (i == j) {
+					Thread.sleep(2000);
+					span.click();
+
+					break;
+				}
+				j++;
+			}
+			if (i == j) {
+				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
+				save_button2.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+
+				WebElement doc_title = GWait.Wait_GetElementById("document_title");
+				doc_title.sendKeys(Document_Title_in_list);
+
+				WebElement save_button24 = GWait.Wait_GetElementById("savedoc");
+				save_button24.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+				WebElement doc_date = GWait.Wait_GetElementById("document_date");
+				doc_date.sendKeys(Document_Date_in_list);
+				Thread.sleep(2000);
+				WebElement doc_version = GWait.Wait_GetElementById("version");
+				doc_version.sendKeys(Version_in_list);
+				Thread.sleep(2000);
+
+				WebElement save_button22 = GWait.Wait_GetElementById("savedoc");
+				save_button22.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
+				upload_doc.sendKeys(doc_upload);
+				WebElement save_button23 = GWait.Wait_GetElementById("savedoc");
+				save_button23.click();
+
+			}
+
+		}
+
+		Thread.sleep(2000);
+		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
+		Thread.sleep(10000);
+
+		WebElement submit_to_IEC = GWait.Wait_GetElementById("querysubmit");
+		submit_to_IEC.click();
+		Thread.sleep(6000);
+		WebElement logoutt = GWait.Wait_GetElementByXpath("//span/a");
+		logoutt.click();
+
+		WebElement logo = GWait.Wait_GetElementByCSS("img");
+		logo.click();
+
+	}
+
+	// Check for Returned reply submission to IEC with blank form
+	public void CRe4_1985() throws Exception {
 
 
 		Dashboard_Links ns = new Dashboard_Links();
-		
-		
-	    FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
+
+		FileInputStream fi = new FileInputStream("C:\\Selenium_Files\\Create4_v2\\CReATE4_Data.xls");
 		Workbook wb = Workbook.getWorkbook(fi);
 		Sheet r1 = wb.getSheet("Project Submissions");
-		
-		String Document_Title_in_list = r1.getCell(2,510).getContents();
-		String Version_in_list = r1.getCell(3,510).getContents();
-		String Document_Date_in_list = r1.getCell(4,510).getContents();
-		String doc_upload = r1.getCell(5,510).getContents();
-		String Query_Cmnts_Continuation = r1.getCell(6,510).getContents();
 
-		
-		
+		String Document_Title_in_list = r1.getCell(2, 519).getContents();
+		String Version_in_list = r1.getCell(3, 519).getContents();
+		String Document_Date_in_list = r1.getCell(4, 519).getContents();
+		String doc_upload = r1.getCell(5, 519).getContents();
+		String Query_Cmnts_Continuation = r1.getCell(6, 519).getContents();
+
 		ns.FBNEWSUBMISSION();
 
-		
-
 		GlobalMethods.Admin_Login();
-	
+
 		WebElement Dashboard_newsubmission2 = GWait.Wait_GetElementByCSS("span.pull-left");
 		Dashboard_newsubmission2.click();
 
@@ -882,16 +918,15 @@ public class TS_167 extends TS_51 {
 		Thread.sleep(6000);
 		WebElement Return_To_PI_button = GWait.Wait_GetElementById("return_modal_btn");
 		Return_To_PI_button.click();
-		
-		
+
 		Thread.sleep(2000);
 		WebElement Return_To_PI_comments = GWait.Wait_GetElementByXpath("//html/body/div[4]/div/div[2]/div[2]/div[5]/div/form/div/div[6]/div[2]/div/div[2]/div/div[1]/div/div/div[2]");
 		Return_To_PI_comments.sendKeys("Test Comments by Admin to PI for resubmitting the project with more files which are missing");
 
 		WebElement Returning_PI_button = GWait.Wait_GetElementById("return_btn");
 		Returning_PI_button.click();
-		GWait.LoadGif();
-		Thread.sleep(6000);
+GWait.LoadGif();
+Thread.sleep(8000);
 		WebElement logoutt12 = GWait.Wait_GetElementByXpath("//span/a");
 		logoutt12.click();
 		Thread.sleep(8000);
@@ -901,17 +936,17 @@ public class TS_167 extends TS_51 {
 		GlobalMethods.PI_Login();
 		WebElement Submissions_returned_dash = GWait.Wait_GetElementByXpath("//li[5]/a/span");
 		Submissions_returned_dash.click();
-		
+
 		WebElement query_tab_edit = GWait.Wait_GetElementByCSS("span.fa.fa-edit");
 		query_tab_edit.click();
-		
+
+		// saving Submit documents
+
 		Thread.sleep(2000);
 		System.out.println(docvalue_edit.size() - 1);
-		
 
 		for (int i = Dashboard_Links.querydoccount; i <= docvalue_edit.size() - 1; i++) {
-			Thread.sleep(10000);
-			//WebElement docdrop = GWait.Wait_GetElementByXpath("html/body/div[5]/div[1]/div[3]/div[4]/div[2]/form/div/div[1]/div[1]/div/div/div/button");
+			Thread.sleep(6000);
 			docdrop_edit.click();
 			String numberAsString = Integer.toString(i);
 			Thread.sleep(5000);
@@ -930,20 +965,39 @@ public class TS_167 extends TS_51 {
 				j++;
 			}
 			if (i == j) {
+				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
+				save_button2.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
+
 				WebElement doc_title = GWait.Wait_GetElementById("document_title");
 				doc_title.sendKeys(Document_Title_in_list);
 
-				WebElement doc_version = GWait.Wait_GetElementById("version");
-				doc_version.sendKeys(Version_in_list);
+				WebElement save_button24 = GWait.Wait_GetElementById("savedoc");
+				save_button24.click();
+				Thread.sleep(8000);
 
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
 				WebElement doc_date = GWait.Wait_GetElementById("document_date");
 				doc_date.sendKeys(Document_Date_in_list);
+				Thread.sleep(2000);
+				WebElement doc_version = GWait.Wait_GetElementById("version");
+				doc_version.sendKeys(Version_in_list);
+				Thread.sleep(2000);
 
+				WebElement save_button22 = GWait.Wait_GetElementById("savedoc");
+				save_button22.click();
+				Thread.sleep(8000);
+
+				GlobalMethods.alertaccept();
+				Thread.sleep(2000);
 				WebElement upload_doc = GWait.Wait_GetElementById("proj_document");
 				upload_doc.sendKeys(doc_upload);
-
-				WebElement save_button2 = GWait.Wait_GetElementById("savedoc");
-				save_button2.click();
+				WebElement save_button23 = GWait.Wait_GetElementById("savedoc");
+				save_button23.click();
 
 			}
 
@@ -952,7 +1006,7 @@ public class TS_167 extends TS_51 {
 		Thread.sleep(2000);
 		((JavascriptExecutor) GlobalMethods.driver).executeScript("scroll(0,1000)");
 		Thread.sleep(10000);
-        GWait.LoadGif();
+
 		WebElement next_button = GWait.Wait_GetElementById("nextidedit");
 		next_button.click();
 
@@ -975,11 +1029,6 @@ public class TS_167 extends TS_51 {
 
 		WebElement logo = GWait.Wait_GetElementByCSS("img");
 		logo.click();
-
-
-		
-		
-
 	}
 
 }

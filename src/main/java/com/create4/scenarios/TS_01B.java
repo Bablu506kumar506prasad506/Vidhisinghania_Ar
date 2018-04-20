@@ -1,6 +1,9 @@
 package com.create4.scenarios;
 
 import java.io.FileInputStream;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -339,7 +342,7 @@ public class TS_01B {
 				
 		WebElement add_inst_admin = GWait.Wait_GetElementByLinkText("Add IEC Admin");
 		add_inst_admin.click();
-
+Thread.sleep(2000);
 		Assert.assertEquals(page_heading.getText().trim(), Inst_heading);
 
 		Thread.sleep(4000);
@@ -798,7 +801,7 @@ public class TS_01B {
 				
 		WebElement add_inst_admin = GWait.Wait_GetElementByLinkText("Add IEC Admin");
 		add_inst_admin.click();
-
+Thread.sleep(2000);
 		Assert.assertEquals(page_heading.getText().trim(), Inst_heading);
 
 		Thread.sleep(1000);
@@ -1053,7 +1056,7 @@ public class TS_01B {
 
 		WebElement Manage_Items = GWait.Wait_GetElementByXpath("html/body/div[3]/div/div[2]/ul/li[2]/a");
 		Manage_Items.click();
-
+Thread.sleep(1000);
 		WebElement Manage_Inst_admin = GWait.Wait_GetElementByLinkText("Manage Institute Admins");
 		Manage_Inst_admin.click();
 				
@@ -1211,7 +1214,8 @@ public class TS_01B {
 		
 		//String Admin_Role = r.getCell(3, 13).getContents();
 
-
+		
+		WebElement Inst_Title =GWait.Wait_GetElementById("inst_name");
 		Inst_Title.sendKeys(Inst_tite);
 		Thread.sleep(2000);
 		Adds.sendKeys(Inst_address);
@@ -1230,6 +1234,8 @@ public class TS_01B {
 		Thread.sleep(1000);
 
 		Ins_Logo.sendKeys(Inst_logo);
+		
+		WebElement Create_button =GWait.Wait_GetElementByXpath("//*[@id='createinstitute']/div[8]/div/input");
 		Create_button.click();
 		
 		//admin creation
@@ -1291,7 +1297,9 @@ public class TS_01B {
 				
 		WebElement add_inst_admin1 = GWait.Wait_GetElementByLinkText("Add IEC Admin");
 		add_inst_admin1.click();
-
+		
+		
+		WebElement iec_admin_institute =GWait.Wait_GetElementById("add_iec_admin_institute");
 		Select select11 = new Select(iec_admin_institute);
 		select11.selectByVisibleText(Inst_tite);
 		Thread.sleep(6000);

@@ -627,7 +627,7 @@ public class TS_151 {
 
 		Assert.assertEquals(doctype_version.getText().trim(), Version_in_list);
 
-		Assert.assertEquals(doctype_date.getText().trim(), Document_Date_in_list);
+		//Assert.assertEquals(doctype_date.getText().trim(), Document_Date_in_list);
 
 				
 		WebElement edit_link =GWait.Wait_GetElementByCSS("i.fa.fa-edit");

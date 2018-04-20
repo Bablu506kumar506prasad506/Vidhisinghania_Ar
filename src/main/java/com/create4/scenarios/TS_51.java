@@ -405,6 +405,7 @@ public class TS_51 {
 	@FindBy(linkText = "Project History")
 	WebElement PI_history;
 
+
 	// Check for 'Project status' when initial submission gets MS decision as 'Letter of Permission'
 	public void CRe4_1221() throws Exception {
 		
@@ -588,6 +589,7 @@ public class TS_51 {
 	// Check for 'Project status' when initial submission gets MS decision as 'Provisional Letter of Permission'
 	
 	public void CRe4_1231() throws Exception {
+
 
 		
 		//******************Initial Project Submission********************//
